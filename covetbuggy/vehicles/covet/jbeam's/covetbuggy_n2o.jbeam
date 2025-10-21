@@ -1,0 +1,223 @@
+{
+    "cb_n2o_system": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Nitrous Oxide Injection",
+            "value":350,
+        },
+        "slotType" : "cb_n2o_system",
+        "slots": [
+            ["type", "default", "description"],
+            ["cb_n2o_bottle","cb_n2o_bottle_10kg", "Nitrous Oxide Bottle"],
+            ["cb_n2o_shot","n2o_shot_50", "Nitrous Oxide Shot Size"],
+        ],
+        "variables": [
+            ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+            ["$n2o_rpm", "range", "RPM", "Nitrous Oxide", 4000, 2500, 9000, "Minimum RPM", "Minimum RPM where nitrous oxide can spray", {"stepDis":50}],
+            ["$n2o_gear", "range", "Gear", "Nitrous Oxide", 3, 1, 6, "Minimum Gear", "Minimum gear where nitrous oxide can spray", {"minDis":1, "maxDis":6, "stepDis":1}],
+        ],
+        "powertrain": [
+            ["type", "name", "inputName", "inputIndex"],
+        ],
+        "mainEngine": {
+            "nitrousOxideInjection": "n2o",
+        },
+        "n2o": {
+            "cutInRPM": "$n2o_rpm",
+            "minimumGear": "$n2o_gear",
+        },
+        "controller": [
+            ["fileName"],
+            ["nitrousOxideInjection", {}],
+        ],
+        "vehicleController": {
+        },
+        "soundConfig": {
+        },
+    },
+    "cb_n2o_bottle_10kg": {
+        "information":{
+            "authors":"niTniT",
+            "name":"10kg Nitrous Oxide Bottle",
+            "value":200,
+        },
+        "slotType" : "cb_n2o_bottle",
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            //["cb_n2o_bottle", "etk800_body"],
+        ],
+        "props": [
+            ["func",     "mesh",        "idRef:", "idX:", "idY:", "baseRotation",            "rotation",            "translation",         "min", "max", "offset", "multiplier"],
+            {"optional":true},
+            ["null", "cb_n2o_bottle_10lb", "f8l","f9l","f8r",        {"x":-90, "y":-45, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1, "y":0.5, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0,"y":0, "z":0}}],
+            {"optional":false},
+        ],
+        "powertrain": [
+            ["type", "name", "inputName", "inputIndex"],
+        ],
+        "energyStorage": [
+            ["type", "name"],
+            ["n2oTank", "mainBottle"],
+        ],
+        "mainBottle": {
+            "capacity": 10,
+            "startingCapacity": 10,
+        },
+        "mainEngine": {
+            "energyStorage": ["mainTank","fueltank_R", "fueltank_L", "mainBottle"],
+        },
+        "n2o": {
+            "purgeValves:": ["f6r","f1r"],
+        },
+        "nodes": [
+             ["id", "posX", "posY", "posZ"],
+             //--N2O Bottle--
+             {"nodeMaterial":"|NM_METAL"},
+             {"frictionCoef":0.5},
+             {"collision":true},
+             {"selfCollision":false},
+             {"group":"cb_n2o_bottle"},
+             {"nodeWeight":11},
+             {"engineGroup":"cb_n2o_bottle"},
+             ["n2o", 0, 0.48533, 0.47888],
+             {"engineGroup":""},
+             {"group":""},
+             {"collision":true},
+        ],
+        "beams": [
+              ["id1:", "id2:"],
+              {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+              {"beamSpring":1501000,"beamDamp":150},
+              {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+              {"deformLimitExpansion":""},
+              ["n2o", "f9r"],
+              ["n2o", "f9l"],
+              ["n2o", "f8r"],
+              ["n2o", "f8l"],
+              {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+              {"deformLimitExpansion":1.1},
+        ],
+    },
+    "cb_n2o_bottle_20kg": {
+        "information":{
+            "authors":"niTniT",
+            "name":"20kg Nitrous Oxide Bottle",
+            "value":200,
+        },
+        "slotType" : "cb_n2o_bottle",
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            //["cb_n2o_bottle", "etk800_body"],
+        ],
+        "props": [
+            ["func",     "mesh",        "idRef:", "idX:", "idY:", "baseRotation",            "rotation",            "translation",         "min", "max", "offset", "multiplier"],
+            {"optional":true},
+            ["null", "cb_n2o_bottle_20lb", "f8l","f9l","f8r",        {"x":-90, "y":-45, "z":0}, {"x":0, "y":0, "z":0}, {"x":0.1, "y":0.5, "z":0}, 0, 0, 0, 1, {"baseTranslation":{"x":0,"y":0, "z":0}}],
+            {"optional":false},
+        ],
+        "powertrain": [
+            ["type", "name", "inputName", "inputIndex"],
+        ],
+        "energyStorage": [
+            ["type", "name"],
+            ["n2oTank", "mainBottle"],
+        ],
+        "mainBottle": {
+            "capacity": 10,
+            "startingCapacity": 10,
+        },
+        "mainEngine": {
+            "energyStorage": ["mainTank","fueltank_R", "fueltank_L", "mainBottle"],
+        },
+        "n2o": {
+            "purgeValves:": ["f6r","f1r"],
+        },
+        "nodes": [
+             ["id", "posX", "posY", "posZ"],
+             //--N2O Bottle--
+             {"nodeMaterial":"|NM_METAL"},
+             {"frictionCoef":0.5},
+             {"collision":true},
+             {"selfCollision":false},
+             {"group":"cb_n2o_bottle"},
+             {"nodeWeight":11},
+             {"engineGroup":"cb_n2o_bottle"},
+             ["n2o", 0, 0.48533, 0.47888],
+             {"engineGroup":""},
+             {"group":""},
+             {"collision":true},
+        ],
+        "beams": [
+              ["id1:", "id2:"],
+              {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+              {"beamSpring":1501000,"beamDamp":150},
+              {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+              {"deformLimitExpansion":""},
+              ["n2o", "f9r"],
+              ["n2o", "f9l"],
+              ["n2o", "f8r"],
+              ["n2o", "f8l"],
+              {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+              {"deformLimitExpansion":1.1},
+        ],
+    },
+    "cb_n2o_shot_50": {
+        "information":{
+            "authors":"niTniT",
+            "name":"50kW Shot Size",
+            "value":100,
+        },
+        "slotType" : "cb_n2o_shot",
+        "n2o": {
+            "addedPower": 50,
+        },
+    },
+    "cb_n2o_shot_100": {
+        "information":{
+            "authors":"niTniT",
+            "name":"100kW Shot Size",
+            "value":100,
+        },
+        "slotType" : "cb_n2o_shot",
+        "n2o": {
+            "addedPower": 100,
+        },
+    },
+    "cb_n2o_shot_150": {
+        "information":{
+            "authors":"niTniT",
+            "name":"150kW Shot Size",
+            "value":100,
+        },
+        "slotType" : "cb_n2o_shot",
+        "n2o": {
+            "addedPower": 150,
+        },
+    },
+    "cb_n2o_shot_200": {
+        "information":{
+            "authors":"niTniT",
+            "name":"200kW Shot Size",
+            "value":100,
+        },
+        "slotType" : "cb_n2o_shot",
+        "n2o": {
+            "addedPower": 200,
+        },
+    },
+    "cb_n2o_shot_variable": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Adjustable Shot Size",
+            "value":200,
+        },
+        "slotType" : "cb_n2o_shot",
+        "variables": [
+            ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+            ["$n2o_power", "range", "kW", "Nitrous Oxide", 75, 25, 2000, "Added Power", "Power increase the N2O injection grants", {"stepDis":5}],
+        ],
+        "n2o": {
+            "addedPower": "$n2o_power",
+        },
+    },
+    }

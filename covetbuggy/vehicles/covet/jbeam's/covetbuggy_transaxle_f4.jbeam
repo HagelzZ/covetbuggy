@@ -1,0 +1,366 @@
+{
+    "covetbuggy_wcf4_transaxle_6M": {
+        "information":{
+            "authors":"niTniT",
+            "name":"6-Speed Manual Transaxle",
+            "value":3800,
+        },
+        "slotType" : "covetbuggy_wcf4_transaxle",
+        "slots": [
+            ["type", "default", "description"],
+            ["covetbuggy_flywheel","covetbuggy_flywheel","Flywheel", {"coreSlot":true}],
+            ["covetbuggy_wcf4_differential_R","covetbuggy_wcf4_differential_R", "Rear Differential"],
+        ],
+        "powertrain": [
+            ["type", "name", "inputName", "inputIndex"],
+            ["frictionClutch", "clutch", "mainEngine", 1],
+            ["manualGearbox", "gearbox", "clutch", 1],
+        ],
+        "vehicleController": {
+            "calculateOptimalLoadShiftPoints": true,
+            "shiftDownRPMOffsetCoef":1.22,
+            "lowShiftDownRPM":[0,0,0,1400,1600,1500,1500,1500],
+            "lowShiftUpRPM":[0,0,3400,3000,2700,2700,2700],
+            "clutchLaunchStartRPM": 2500,
+            "clutchLaunchTargetRPM": 3000,
+        },
+        "gearbox": {
+            "uiName":"Gearbox",
+            "gearRatios":[-3.21, 0, 3.91, 2.32, 1.61, 1.28, 1.03, 0.78],
+            "friction": 1.19,
+            "dynamicFriction": 0.0011,
+            "torqueLossCoef": 0.0155,
+            "gearboxNode:":["cb_tra1"],
+    
+            "gearWhineCoefsInput":  [0.60, 0.00, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12],
+            "gearWhineCoefsOutput": [0.00, 0.00, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24],
+            "gearWhineInputEvent": "event:>Vehicle>Transmission>helical_01>twine_in",
+            "gearWhineOutputEvent": "event:>Vehicle>Transmission>helical_01>twine_out",
+    
+            //"forwardInputPitchCoef":1
+            //"forwardOutputPitchCoef":1
+            //"reverseInputPitchCoef":0.7
+            //"reverseOutputPitchCoef":0.7
+    
+            //"gearWhineInputPitchCoefSmoothing":50
+            //"gearWhineOutputPitchCoefSmoothing":50
+            //"gearWhineInputVolumeCoefSmoothing":10
+            //"gearWhineOutputVolumeCoefSmoothing":10
+    
+            //"gearWhineFixedCoefOutput": 0.7
+            //"gearWhineFixedCoefInput": 0.4
+        },
+        "flexbodies": [
+             ["mesh", "[group]:", "nonFlexMaterials"],
+             ["covetbuggy_wcf4_transaxle", ["covetbuggy_wcf4_engine","covetbuggy_wcf4_transaxle"]],
+        ],
+        "nodes": [
+             ["id", "posX", "posY", "posZ"],
+             //--6 Speed Manual--
+             {"frictionCoef":0.5},
+             {"nodeMaterial":"|NM_METAL"},
+             {"selfCollision":false},
+             {"collision":true},
+             {"group":"covetbuggy_wcf4_transaxle"},
+             {"nodeWeight":17},
+             ["cb_tra1", 0.00000, 1.49877, 0.30601],
+             {"nodeWeight":5},
+             ["cb_tra2r", -0.12000, 1.93277, 0.32601],
+             ["cb_tra2l", 0.12000, 1.93277, 0.32601],
+             {"group":""},
+        ],
+        "beams":[
+            ["id1:", "id2:"],
+            {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+            //--TRANSMISSION CONE--
+            {"beamSpring":15001000,"beamDamp":500},
+            {"beamDeform":175000,"beamStrength":"FLT_MAX"},
+            ["cb_tra1","cb_e1r"],
+            ["cb_tra1","cb_e3r"],
+            ["cb_tra1","cb_e1l"],
+            ["cb_tra1","cb_e3l"],
+            ["cb_tra2l", "cb_tra2r"],
+            ["cb_tra2l", "cb_e1l"],
+            ["cb_tra2r", "cb_e1r"],
+            ["cb_tra2l", "cb_e2l"],
+            ["cb_tra2r", "cb_e2r"],
+            ["cb_tra2l", "cb_e2r"],
+            ["cb_tra2r", "cb_e2l"],
+            ["cb_tra2l", "cb_e1r"],
+            ["cb_tra2r", "cb_e1l"],
+            ["cb_tra2l", "cb_tra1"],
+            ["cb_tra2r", "cb_tra1"],
+            {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        ],
+    },
+    "covetbuggy_wcf4_transaxle_6M_race": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Race 6-Speed Manual Transaxle",
+            "value":8600,
+        },
+        "slotType" : "covetbuggy_wcf4_transaxle",
+        "slots": [
+            ["type", "default", "description"],
+            ["covetbuggy_flywheel","covetbuggy_flywheel_race","Flywheel", {"coreSlot":true}],
+            ["covetbuggy_wcf4_differential_R","covetbuggy_wcf4_differential_R", "Rear Differential"],
+        ],
+        "variables": [
+            ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+            ["$gear_R", "range", ":1", "Transmission", 2.95, 0.5, 5, "Reverse Gear Ratio", "Torque multiplication ratio", {"stepDis":0.01}],
+            ["$gear_1", "range", ":1", "Transmission", 3.91, 0.5, 5, "1st Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+            ["$gear_2", "range", ":1", "Transmission", 2.32, 0.5, 5, "2nd Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+            ["$gear_3", "range", ":1", "Transmission", 1.61, 0.5, 5, "3rd Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+            ["$gear_4", "range", ":1", "Transmission", 1.28, 0.5, 5, "4th Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+            ["$gear_5", "range", ":1", "Transmission", 1.03, 0.5, 5, "5th Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+            ["$gear_6", "range", ":1", "Transmission", 0.78, 0.5, 5, "6th Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ],
+        "powertrain": [
+            ["type", "name", "inputName", "inputIndex"],
+            ["frictionClutch", "clutch", "mainEngine", 1],
+            ["manualGearbox", "gearbox", "clutch", 1],
+        ],
+        "vehicleController": {
+            "transmissionShiftDelay":0.13,
+            "calculateOptimalLoadShiftPoints": true,
+            "shiftDownRPMOffsetCoef":1.27,
+            //"aggressionSmoothingDown":0.05
+            "aggressionHoldOffThrottleDelay":3,
+            //"lowShiftDownRPM":[0,0,0,1500,1700,1600,1600,1600],
+            //"lowShiftUpRPM":[0,0,3600,3200,2900,2900,2900],
+            "lowShiftDownRPM":[0,0,0,1900,2600,2600,2600,2600],
+            "lowShiftUpRPM":[0,0,4300,4200,4050,3850,3750],
+            //"wheelSlipUpThreshold":100,
+            "clutchLaunchStartRPM": 3500,
+            "clutchLaunchTargetRPM": 4000,
+        },
+        "gearbox": {
+            "uiName":"Gearbox",
+            "gearRatios":["$=-$gear_R", 0, "$gear_1", "$gear_2", "$gear_3", "$gear_4", "$gear_5", "$gear_6"],
+            "friction": 1.47,
+            "dynamicFriction": 0.0015,
+            "torqueLossCoef": 0.013,
+            "gearboxNode:":["cb_tra1"],
+    
+            "gearWhineCoefsInput":  [0.66, 0.00, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33],
+            "gearWhineCoefsOutput": [0.00, 0.00, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66],
+            "gearWhineInputEvent": "event:>Vehicle>Transmission>straight_01>twine_in_race",
+            "gearWhineOutputEvent": "event:>Vehicle>Transmission>straight_01>twine_out_race",
+    
+            //"forwardInputPitchCoef":1
+            //"forwardOutputPitchCoef":1
+            //"reverseInputPitchCoef":0.7
+            //"reverseOutputPitchCoef":0.7
+    
+            //"gearWhineInputPitchCoefSmoothing":50
+            //"gearWhineOutputPitchCoefSmoothing":50
+            //"gearWhineInputVolumeCoefSmoothing":10
+            //"gearWhineOutputVolumeCoefSmoothing":10
+    
+            //"gearWhineFixedCoefOutput": 0.7
+            //"gearWhineFixedCoefInput": 0.4
+        },
+        "clutch": {
+            "clutchFreePlay":0.2,
+        },
+        "flexbodies": [
+             ["mesh", "[group]:", "nonFlexMaterials"],
+             ["covetbuggy_wcf4_transaxle", ["covetbuggy_wcf4_engine","covetbuggy_wcf4_transaxle"]],
+        ],
+        "nodes": [
+             ["id", "posX", "posY", "posZ"],
+             //--6 Speed Manual--
+             {"frictionCoef":0.5},
+             {"nodeMaterial":"|NM_METAL"},
+             {"selfCollision":false},
+             {"collision":true},
+             {"group":"covetbuggy_wcf4_transaxle"},
+             {"nodeWeight":17},
+             ["cb_tra1", 0.00000, 1.49877, 0.30601],
+             {"nodeWeight":5},
+             ["cb_tra2r", -0.12000, 1.93277, 0.32601],
+             ["cb_tra2l", 0.12000, 1.93277, 0.32601],
+             {"group":""},
+        ],
+        "beams":[
+            ["id1:", "id2:"],
+            {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+            //--TRANSMISSION CONE--
+            {"beamSpring":15001000,"beamDamp":500},
+            {"beamDeform":175000,"beamStrength":"FLT_MAX"},
+            ["cb_tra1","cb_e1r"],
+            ["cb_tra1","cb_e3r"],
+            ["cb_tra1","cb_e1l"],
+            ["cb_tra1","cb_e3l"],
+            ["cb_tra2l", "cb_tra2r"],
+            ["cb_tra2l", "cb_e1l"],
+            ["cb_tra2r", "cb_e1r"],
+            ["cb_tra2l", "cb_e2l"],
+            ["cb_tra2r", "cb_e2r"],
+            ["cb_tra2l", "cb_e2r"],
+            ["cb_tra2r", "cb_e2l"],
+            ["cb_tra2l", "cb_e1r"],
+            ["cb_tra2r", "cb_e1l"],
+            ["cb_tra2l", "cb_tra1"],
+            ["cb_tra2r", "cb_tra1"],
+            {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        ],
+    },
+"covetbuggy_wcf4_transaxle_6M_SQ": {
+    "information":{
+        "authors":"niTniT",
+        "name":"Race 6-Speed Sequential Transaxle",
+        "value":18000,
+    },
+    "slotType" : "covetbuggy_wcf4_transaxle",
+    "slots": [
+        ["type", "default", "description"],
+        ["covetbuggy_flywheel","covetbuggy_flywheel_race","Flywheel", {"coreSlot":true}],
+        ["covetbuggy_wcf4_differential_R","covetbuggy_wcf4_differential_R", "Rear Differential"],
+    ],
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$gear_R", "range", ":1", "Transmission", 2.95, 0.5, 5, "Reverse Gear Ratio", "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_1", "range", ":1", "Transmission", 3.91, 0.5, 5, "1st Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_2", "range", ":1", "Transmission", 2.32, 0.5, 5, "2nd Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_3", "range", ":1", "Transmission", 1.61, 0.5, 5, "3rd Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_4", "range", ":1", "Transmission", 1.28, 0.5, 5, "4th Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_5", "range", ":1", "Transmission", 1.05, 0.5, 5, "5th Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}],
+        ["$gear_6", "range", ":1", "Transmission", 0.75, 0.5, 5, "6th Gear Ratio",     "Torque multiplication ratio", {"stepDis":0.01}]
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["frictionClutch", "clutch", "mainEngine", 1],
+        ["sequentialGearbox", "gearbox", "clutch", 1],
+    ],
+    "gearbox": {
+        "uiName":"Gearbox",
+        "gearRatios":["$=-$gear_R", 0, "$gear_1", "$gear_2", "$gear_3", "$gear_4", "$gear_5", "$gear_6"],
+        "friction": 1.48,
+        "dynamicFriction": 0.0014,
+        "torqueLossCoef": 0.012,
+        "gearboxNode:":["cb_tra1"],
+
+        "gearWhineCoefsInput":  [0.66, 0.00, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33],
+        "gearWhineCoefsOutput": [0.00, 0.00, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66, 0.66],
+        "gearWhineInputEvent": "event:>Vehicle>Transmission>straight_01>twine_in_race_sq",
+        "gearWhineOutputEvent": "event:>Vehicle>Transmission>straight_01>twine_out_race_sq",
+
+        //"forwardInputPitchCoef":1
+        //"forwardOutputPitchCoef":1
+        //"reverseInputPitchCoef":0.7
+        //"reverseOutputPitchCoef":0.7
+
+        //"gearWhineInputPitchCoefSmoothing":50
+        //"gearWhineOutputPitchCoefSmoothing":50
+        //"gearWhineInputVolumeCoefSmoothing":10
+        //"gearWhineOutputVolumeCoefSmoothing":10
+
+        //"gearWhineFixedCoefOutput": 0.7
+        //"gearWhineFixedCoefInput": 0.4
+    },
+    "clutch": {
+        "clutchFreePlay":0.5,
+        "lockSpringCoef":0.3,
+    },
+    "vehicleController": {
+        "automaticModes":"PRNDM",
+        "calculateOptimalLoadShiftPoints": true,
+        "shiftDownRPMOffsetCoef":1.27,
+        //"aggressionSmoothingUp":2
+        //"aggressionSmoothingDown":0.05
+        "aggressionHoldOffThrottleDelay":3,
+        //"lowShiftDownRPM":[0,0,0,1700,1800,1700,1600,1600,1600],
+        //"lowShiftUpRPM":[0,0,3600,3400,3000,2900,2900,2900],
+        "lowShiftDownRPM":[0,0,0,2300,2600,2600,2600,2600],
+        "lowShiftUpRPM":[0,0,4200,4200,4050,3950,3750],
+        //"wheelSlipUpThreshold":100,
+        "clutchLaunchStartRPM": 3000,
+        "clutchLaunchTargetRPM": 4000,
+        "transmssionShiftDelay":0.05,
+        "clutchOutRate":20
+        "clutchInRate":20
+    },
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["covetbuggy_wcf4_transaxle", ["covetbuggy_wcf4_engine","covetbuggy_wcf4_transmission"]],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--6 Speed Manual--
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true},
+         {"group":"covetbuggy_wcf4_transaxle"},
+         {"nodeWeight":21},
+         ["cb_tra1", 0.00000, 1.49877, 0.30601],
+         {"nodeWeight":7},
+         ["cb_tra2r", -0.12000, 1.93277, 0.32601],
+         ["cb_tra2l", 0.12000, 1.93277, 0.32601],
+         {"group":""},
+    ],
+    "beams":[
+        ["id1:", "id2:"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        //--TRANSMISSION CONE--
+        {"beamSpring":15001000,"beamDamp":500},
+        {"beamDeform":175000,"beamStrength":"FLT_MAX"},
+        ["cb_tra1","cb_e1r"],
+        ["cb_tra1","cb_e3r"],
+        ["cb_tra1","cb_e1l"],
+        ["cb_tra1","cb_e3l"],
+        ["cb_tra2l", "cb_tra2r"],
+        ["cb_tra2l", "cb_e1l"],
+        ["cb_tra2r", "cb_e1r"],
+        ["cb_tra2l", "cb_e2l"],
+        ["cb_tra2r", "cb_e2r"],
+        ["cb_tra2l", "cb_e2r"],
+        ["cb_tra2r", "cb_e2l"],
+        ["cb_tra2l", "cb_e1r"],
+        ["cb_tra2r", "cb_e1l"],
+        ["cb_tra2l", "cb_tra1"],
+        ["cb_tra2r", "cb_tra1"],
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"covetbuggy_flywheel": {
+    "information":{
+        "authors":"niTniT",
+        "name":"Flywheel",
+        "value":150,
+    },
+    "slotType" : "covetbuggy_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.07,
+        "clutchMass":5.25,
+    },
+},
+"covetbuggy_flywheel_race": {
+    "information":{
+        "authors":"niTniT",
+        "name":"Ultra Light Flywheel",
+        "value":900,
+    },
+    "slotType" : "covetbuggy_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.02,
+        "clutchMass":3.8,
+    },
+},
+"covetbuggy_flywheel_light": {
+    "information":{
+        "authors":"niTniT",
+        "name":"Lightened Flywheel",
+        "value":400,
+    },
+    "slotType" : "covetbuggy_flywheel",
+    "clutch": {
+        "uiName":"Clutch",
+        "additionalEngineInertia":0.04,
+        "clutchMass":4.6,
+    },
+},
+}

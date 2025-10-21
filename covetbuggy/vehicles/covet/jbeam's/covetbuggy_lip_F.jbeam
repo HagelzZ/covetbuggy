@@ -1,0 +1,95 @@
+{
+    "covetbuggy_lip_F": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Front Buggy-cut Lip",
+            "value":90,
+        },
+        "slotType" : "covet_lip_F",
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            ["covetbuggy_lip_F", ["covet_bumper_F"]],
+        ],
+        "nodes": [
+            ["id", "posX", "posY", "posZ"],
+            //--redefine nodes to move them
+            {"nodeMaterial":"|NM_PLASTIC"},
+            {"frictionCoef":0.8},
+            {"nodeWeight":0.6},
+            {"group":"covet_bumper_F"},
+            {"collision":true},
+            {"selfCollision":true},
+            ["fb2rr", -0.66000, -1.85000, 0.20000],
+            ["fb2r", -0.38000, -1.91000, 0.20000],
+            ["fb2", 0.00000, -1.93000, 0.20000],
+            ["fb2l", 0.38000, -1.91000, 0.20000],
+            ["fb2ll", 0.66000, -1.85000, 0.20000],
+    
+            ["fb4rr", -0.78000, -1.67177, 0.20000],
+            ["fb4ll", 0.78000, -1.67177, 0.20000],
+            {"group":""},
+        ],
+    },
+"covetbuggy_lip_F_sport": {
+    "information":{
+        "authors":"niTniT",
+        "name":"Sport Front Buggy-cut Lip",
+        "value":120,
+    },
+    "slotType" : "covet_lip_F",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["covetbuggy_bumper_lip_F_sport", ["covet_bumper_F"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        //--redefine nodes to move them
+        {"nodeMaterial":"|NM_PLASTIC"},
+        {"frictionCoef":0.8},
+        {"nodeWeight":0.6},
+        {"group":"covet_bumper_F"},
+        {"collision":true},
+        {"selfCollision":true},
+        ["fb2rr", -0.66000, -1.85000, 0.20000],
+        ["fb2r", -0.38000, -1.91000, 0.20000],
+        ["fb2", 0.00000, -1.93000, 0.20000],
+        ["fb2l", 0.38000, -1.91000, 0.20000],
+        ["fb2ll", 0.66000, -1.85000, 0.20000],
+
+        ["fb4rr", -0.78000, -1.67177, 0.20000],
+        ["fb4ll", 0.78000, -1.67177, 0.20000],
+        {"group":""},
+    ],
+},
+"covetbuggy_lip_F_fl": {
+    "information":{
+        "authors":"niTniT",
+        "name":"Front Buggy-cut Lip",
+        "value":120,
+    },
+    "slotType" : "covet_lip_F_fl",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["covetbuggy_bumper_F_fl_lip", ["covet_bumper_F"]],
+    ],
+    "nodes": [
+        ["id", "posX", "posY", "posZ"],
+        //--redefine nodes to move them
+        {"nodeMaterial":"|NM_PLASTIC"},
+        {"frictionCoef":0.8},
+        {"nodeWeight":0.6},
+        {"group":"covet_bumper_F"},
+        {"collision":true},
+        {"selfCollision":true},
+        ["fb2rr", -0.66000, -1.85000, 0.20000],
+        ["fb2r", -0.38000, -1.91000, 0.20000],
+        ["fb2", 0.00000, -1.93000, 0.20000],
+        ["fb2l", 0.38000, -1.91000, 0.20000],
+        ["fb2ll", 0.66000, -1.85000, 0.20000],
+
+        ["fb4rr", -0.78000, -1.67177, 0.20000],
+        ["fb4ll", 0.78000, -1.67177, 0.20000],
+        {"group":""},
+    ],
+},
+}

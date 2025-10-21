@@ -1,0 +1,82 @@
+{
+"covetbuggy_brake_F":{
+    "information":{
+        "authors":"niTniT",
+        "name":"Off-Road Front Disc Brakes",
+        "value":250,
+    },
+
+    "slotType":"covetbuggy_brake_F",
+
+    "slots": [
+        ["type", "default", "description"],
+        ["brakepad_F","brakepad_F", "Front Brake Pads", {"coreSlot":true}],
+    ],
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["brake_disc_slotted", ["wheel_FR","wheelhub_FR"], [], {"pos":{"x":-0.83,"y":-1.24922, "z":0.1}, "scale":{"x":1.0,"y":0.8,"z":0.8}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_disc_slotted", ["wheel_FL","wheelhub_FL"], [], {"pos":{"x":0.83,"y":-1.24922, "z":0.1}, "scale":{"x":1.0,"y":0.8,"z":0.8}, "rot":{"x":180,"y":0,"z":0}}],
+        ["brake_caliper_4pot_yellow_rotopad", ["hub_F","wheelhub_FR"], [], {"pos":{"x":-0.83,"y":-1.24922, "z":0.1}, "scale":{"x":1.0,"y":0.8,"z":0.8}, "rot":{"x":-195,"y":0,"z":0}}],
+        ["brake_caliper_4pot_yellow_rotopad", ["hub_F","wheelhub_FL"], [], {"pos":{"x":0.83,"y":-1.24922, "z":0.1}, "scale":{"x":1.0,"y":0.8,"z":0.8}, "rot":{"x":195,"y":180,"z":0}}],
+    ],
+    "pressureWheels":[
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"brakeTorque":"$=$brakestrength*2100"},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":0},
+        {"brakeSpring":120},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.255},
+        {"brakeMass":3.5},
+        {"brakeType":"disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":0.8},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.2}
+    ],
+},
+"covetbuggy_brake_R": {
+    "information":{
+        "authors":"niTniT",
+        "name":"Off-Road Rear Disc Brakes",
+        "value":250,
+    },
+
+    "slotType":"covetbuggy_brake_R",
+
+    "slots": [
+        ["type", "default", "description"],
+        ["brakepad_R","brakepad_R", "Rear Brake Pads", {"coreSlot":true}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["brake_disc_slotted", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.82,"y":2.1323, "z":0.13429}, "scale":{"x":1.0,"y":0.8,"z":0.8}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_disc_slotted", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.82,"y":2.1323, "z":0.13429}, "scale":{"x":1.0,"y":0.8,"z":0.8}, "rot":{"x":180,"y":0,"z":0}}],
+        ["brake_caliper_4pot_yellow_rotopad", ["hub_R","wheelhub_RR"], [], {"pos":{"x":-0.82,"y":2.1323, "z":0.13429}, "scale":{"x":1.0,"y":0.8,"z":0.8}, "rot":{"x":180,"y":0,"z":0}}],
+        ["brake_caliper_4pot_yellow_rotopad", ["hub_R","wheelhub_RL"], [], {"pos":{"x":0.82,"y":2.1323, "z":0.13429}, "scale":{"x":1.0,"y":0.8,"z":0.8}, "rot":{"x":180,"y":180,"z":0}}],
+    ],
+    "pressureWheels": [
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //brakes
+        {"brakeTorque":"$=$brakestrength*1500"},
+        {"brakeInputSplit":1},
+        {"brakeSplitCoef":1},
+        {"parkingTorque":1850},
+        {"brakeSpring":120},
+
+        //brake thermals
+        {"enableBrakeThermals":true},
+        {"brakeDiameter":0.24},
+        {"brakeMass":3.1},
+        {"brakeType":"disc"},
+        {"rotorMaterial":"steel"},
+        {"brakeVentingCoef":0.7},
+        //brake sounds
+        {"squealCoefNatural": 0.0, "squealCoefLowSpeed": 0.0}
+    ],
+},
+}

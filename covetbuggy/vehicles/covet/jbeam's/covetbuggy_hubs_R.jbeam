@@ -1,0 +1,134 @@
+{
+"covetbuggy_hub_R_centerlug": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Center Lug Rear Hubs",
+            "value":600,
+        },
+        "slotType" : "covetbuggy_hub_R",
+        "slots": [
+            ["type", "default", "description"],
+            ["covetbuggy_brake_R","covetbuggy_brake_R", "Rear Brakes"],
+            //The case() is for backwards compatibility for old configs that use "trackwidth_R" variable.
+            //To change the base track width, edit the trackoffset_R offset in the expression.
+            ["wheel_R_centerlug","centerlug_wheel_01a_19x9_R", "Rear Wheels", {"nodeOffset":{"x":"$=$trackoffset_R+0.33", "y":2.1323, "z":0.13429}}],
+        ],
+    
+},
+"covetbuggy_hub_R_4": {
+        "information":{
+            "authors":"niTniT",
+            "name":"4-Lug Rear Hubs",
+            "value":75,
+        },
+        "slotType" : "covetbuggy_hub_R",
+        "slots": [
+            ["type", "default", "description"],
+            ["covetbuggy_brake_R","covetbuggy_brake_R", "Rear Brakes"],
+            //The case() is for backwards compatibility for old configs that use "trackwidth_R" variable.
+            //To change the base track width, edit the trackoffset_R offset in the expression.
+            ["wheel_R_4","steelwheel_01a_13x5_R", "Rear Wheels", {"nodeOffset":{"x":"$=$trackoffset_R+0.33", "y":2.1323, "z":0.13429}}],
+        ],
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            //brake discs
+            ["brake_hub_4l",                 ["wheel_RR","wheelhub_RR"],    [], {"pos":{"x":-0.82,"y":2.1323, "z":0.13429}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
+            ["brake_hub_4l",                 ["wheel_RL","wheelhub_RL"],    [], {"pos":{"x":0.82,"y":2.1323, "z":0.13429}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":180,"z":0}}],
+        ],
+},
+"covetbuggy_hub_R_5": {
+    "information":{
+        "authors":"niTniT",
+        "name":"5-Lug Rear Hubs",
+        "value":75,
+    },
+    "slotType" : "covetbuggy_hub_R",
+    "slots": [
+        ["type", "default", "description"],
+        ["covetbuggy_brake_R","covetbuggy_brake_R", "Rear Brakes"],
+        ["wheel_R_5","offroadwheel_07a_17x9_R", "Rear Wheels", {"nodeOffset":{"x":"$=$trackoffset_R+0.33", "y":2.1323, "z":0.13429}}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        //brake discs
+        ["brake_hub_5l", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.82,"y":2.1323, "z":0.13429}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_hub_5l", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.82,"y":2.1323, "z":0.13429}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":180,"z":0}}],
+    ],
+},
+"covetbuggy_hub_R_6": {
+    "information":{
+        "authors":"niTniT",
+        "name":"6-Lug Rear Hubs",
+        "value":600,
+    },
+    "slotType" : "covetbuggy_hub_R",
+    "slots": [
+        ["type", "default", "description"],
+        ["covetbuggy_brake_R","covetbuggy_brake_R", "Rear Brakes"],
+        ["wheel_R_6","autobuggy_wheel_R", "Rear Wheels", {"nodeOffset":{"x":"$=$trackoffset_R+0.33", "y":2.1323, "z":0.13429}}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        //brake discs
+        ["brake_hub_6l", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.82,"y":2.1323, "z":0.13429}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_hub_6l", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.82,"y":2.1323, "z":0.13429}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":180,"z":0}}],
+    ],
+},
+"covetbuggy_hub_R_8": {
+    "information":{
+        "authors":"niTniT",
+        "name":"8-Lug Rear Hubs",
+        "value":650,
+    },
+    "slotType" : "covetbuggy_hub_R",
+    "slots": [
+        ["type", "default", "description"],
+        ["covetbuggy_brake_R","covetbuggy_brake_R","Rear Brakes"],
+        //The case() is for backwards compatibility for old configs that use "trackwidth_R" variable.
+        //To change the base track width, edit the trackoffset_R offset in the expression.
+        ["wheel_R_8","steelwheel_03a_17x9_R","Rear Wheels", {"nodeOffset":{"x":"$=$trackoffset_R+0.33", "y":2.1323, "z":0.13429}}],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["brake_hub_8l", ["wheel_RR","wheelhub_RR"], [], {"pos":{"x":-0.82,"y":2.1323, "z":0.13429}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":0,"z":0}}],
+        ["brake_hub_8l", ["wheel_RL","wheelhub_RL"], [], {"pos":{"x":0.82,"y":2.1323, "z":0.13429}, "scale":{"x":0.8,"y":1.0,"z":1.0}, "rot":{"x":0,"y":180,"z":0}}],
+    ],
+},
+"covetbuggy_wheeldata_R":{
+    "information":{
+        "authors":"niTniT",
+        "name":"Rear Spindles",
+        "value":100,
+    },
+
+    "slotType" : "covetbuggy_wheeldata_R",
+
+    "pressureWheels":[
+        ["name","hubGroup","group","node1:","node2:","nodeS","nodeArm:","wheelDir"],
+        //rear
+        {"selfCollision":false},
+        {"collision":true},
+        {"triangleCollision":false},
+        {"propulsed":0},
+        {"hubcapBreakGroup":"hubcap_RR"},
+        {"hubcapGroup":"hubcap_RR"},
+        {"axleBeams":["axle_RR"]},
+        ["RR", "wheel_RR", "tire_RR", "rw1rr", "rw1r", 9999,  "cb_rh5r", 1, {"torqueCoupling:":"cb_e1r", "torqueArm:":"cb_e3r", "torqueArm2:":"cb_e3l"}],
+        {"hubcapBreakGroup":"hubcap_RL"},
+        {"hubcapGroup":"hubcap_RL"},
+        {"axleBeams":["axle_RL"]},
+        ["RL", "wheel_RL", "tire_RL", "rw1ll", "rw1l", 9999,  "cb_rh5l",  -1, {"torqueCoupling:":"cb_e1l", "torqueArm:":"cb_e3l", "torqueArm2:":"cb_e1r"}],
+        {"selfCollision":true},
+        {"hubcapBreakGroup":""},
+        {"hubcapGroup":""},
+        {"axleBeams":[]},{"disableMeshBreaking":false,"disableTriangleBreaking":false},
+        {"enableHubcaps":false},
+        {"propulsed":0},
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["shaft", "spindleRL", "wheelaxleRL", 1, {"connectedWheel":"RL", "breakTriggerBeam":"axle_RL", "uiName":"Rear Left Axle", "friction":0.93, "dynamicFriction":0.0021}],
+        ["shaft", "spindleRR", "wheelaxleRR", 1, {"connectedWheel":"RR", "breakTriggerBeam":"axle_RR", "uiName":"Rear Right Axle", "friction":0.93, "dynamicFriction":0.0021}],
+    ],
+},
+}

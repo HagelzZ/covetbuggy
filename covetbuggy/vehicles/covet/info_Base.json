@@ -1,0 +1,26 @@
+{
+  "0-100 km/h":11.54,
+  "100-0 km/h":46.72,
+
+  "Braking G":0.93,
+  "Config Type":"Offroad",
+  "Configuration":"Base (M)",
+  "Description":"The base model of the Covet Buggy.",
+  "Drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"Turbo-charged",
+  "Off-Road Score":40,
+  "Performance Class":"3",
+  "Population":1,
+  "Power":185,
+  "PowerPeakRPM":"6000-6250",
+  "Propulsion":"ICE",
+  "Top Speed":55,
+  "Torque":225,
+  "TorquePeakRPM":"4500 - 5500",
+  "Transmission":"Manual",
+  "Value":53500,
+  "Weight":1732,
+  "Weight/Power":9.362162162162162,
+  "defaultPaintName1":"Sea Blue"
+}

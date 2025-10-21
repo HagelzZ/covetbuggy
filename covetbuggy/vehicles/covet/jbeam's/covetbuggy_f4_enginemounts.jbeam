@@ -1,0 +1,148 @@
+{
+"covetbuggy_wcf4_enginemounts_ultra": {
+    "information":{
+        "authors":"niTniT",
+        "name":"Ultra Heavy Duty Engine Mounts",
+        "value":500,
+    },
+    "slotType" : "covetbuggy_wcf4_enginemounts",
+    "beams": [
+          ["id1:", "id2:"],
+
+          //engine solid mounts
+          {"optional":true},
+          {"deformLimitExpansion":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":4001000,"beamDamp":200},
+          {"beamDeform":50000,"beamStrength":450000},
+          {"dampCutoffHz":500},
+
+          {"breakGroup":"enginemount_R"},
+          ["cb_em1r", "cb_r3r"],
+          ["cb_em1r", "cb_r1rr"],
+          ["cb_em1r", "cb_f7r"],
+          ["cb_em1r", "cb_r3l"],
+          ["cb_em1r", "cb_r1ll"],
+
+          ["cb_e3r", "cb_r1rr"],
+          ["cb_e1r", "cb_r3r"],
+
+          ["cb_e4r", "cb_r1rr"],
+          ["cb_e4r", "cb_r2rr"],
+          ["cb_e4r", "cb_r1rr"],
+          ["cb_e2r", "cb_r3r"],
+          ["cb_em1r", "cb_r5rr"],
+
+          {"breakGroup":"enginemount_L"},
+          ["cb_em1l", "cb_r3l"],
+          ["cb_em1l", "cb_r1ll"],
+          ["cb_em1l", "cb_f7l"],
+          ["cb_em1l", "cb_r3r"],
+          ["cb_em1l", "cb_r1rr"],
+
+          ["cb_e3l", "cb_r1ll"],
+          ["cb_e1l", "cb_r3l"],
+
+          ["cb_e4l", "cb_r1ll"],
+          ["cb_e4l", "cb_r2ll"],
+          ["cb_e4l", "cb_r1ll"],
+          ["cb_e2l", "cb_r3l"],
+          ["cb_em1l", "cb_r5ll"],
+
+          //transmission mount
+          {"beamSpring":3001000,"beamDamp":200},
+          {"beamDeform":70000, "beamStrength":250000},
+
+          //transmission mounts
+          ["cb_tra1", "cb_f4r"],
+          ["cb_tra1", "cb_f7r"],
+          ["cb_tra1", "cb_f4l"],
+          ["cb_tra1", "cb_f7l"],
+          ["cb_tra1", "cb_r1rr"],
+          ["cb_tra1", "cb_r1ll"],
+          ["cb_tra1", "cb_f3"],
+          ["cb_tra1", "cb_f8"],
+          ["cb_tra1", "cb_f8l"],
+          ["cb_tra1", "cb_f8r"],
+          ["cb_tra1", "cb_f4rr"],
+          ["cb_tra1", "cb_f4ll"],
+          {"boundZone":""},
+          {"breakGroup":""},
+
+          {"dampCutoffHz":""},
+          {"optional":false},
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"covetbuggy_enginemounts_ultra_acf4": {
+    "information":{
+        "authors":"niTniT",
+        "name":"Ultra Heavy Duty Engine Mounts",
+        "value":500,
+    },
+    "slotType" : "covetbuggy_enginemounts_acf4",
+    "beams": [
+          ["id1:", "id2:"],
+
+          //engine solid mounts
+          {"optional":true},
+          {"deformLimitExpansion":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+          {"beamSpring":4001000,"beamDamp":500},
+          {"beamDeform":50000,"beamStrength":150000},
+          {"dampCutoffHz":500},
+
+          {"breakGroup":"enginemount_R"},
+          ["cb_e1l", "cb_r3l"],
+          ["cb_e2l", "cb_r3l"],
+          ["cb_e2r", "cb_r3l"],
+          ["cb_e1r", "cb_r3l"],
+          ["cb_e3l", "cb_r3l"],
+          ["cb_e4l", "cb_r3l"],
+
+          ["cb_e1l", "cb_r1l"],
+          ["cb_e2l", "cb_r1l"],
+          ["cb_e2r", "cb_r1l"],
+          ["cb_e1r", "cb_r1l"],
+          ["cb_e3l", "cb_r1l"],
+          ["cb_e4l", "cb_r1l"],
+
+
+          {"breakGroup":"enginemount_L"},
+          ["cb_e1r", "cb_r3r"],
+          ["cb_e2r", "cb_r3r"],
+          ["cb_e2l", "cb_r3r"],
+          ["cb_e1l", "cb_r3r"],
+          ["cb_e3r", "cb_r3r"],
+          ["cb_e4r", "cb_r3r"],
+
+          ["cb_e1r", "cb_r1r"],
+          ["cb_e2r", "cb_r1r"],
+          ["cb_e2l", "cb_r1r"],
+          ["cb_e1l", "cb_r1r"],
+          ["cb_e3r", "cb_r1r"],
+          ["cb_e4r", "cb_r1r"],
+
+          //transmission mount
+          {"beamSpring":3001000,"beamDamp":200},
+          {"beamDeform":70000, "beamStrength":250000},
+
+          //transmission mounts
+          {"breakGroup":"transmissionmount"},
+          ["cb_tra1", "cb_f8",],
+          ["cb_tra1", "cb_f4r",],
+          ["cb_tra1", "cb_f4l",],
+          ["cb_tra1", "cb_f7r",],
+          ["cb_tra1", "cb_f7l",],
+          ["cb_tra1", "cb_f3",],
+
+          {"boundZone":""},
+          {"breakGroup":""},
+          {"dampCutoffHz":""},
+          {"optional":false},
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+}

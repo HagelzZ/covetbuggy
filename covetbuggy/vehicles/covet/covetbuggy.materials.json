@@ -1,0 +1,1104 @@
+{
+  "big_wheel": {
+    "name": "big_wheel",
+    "mapTo": "big_wheel",
+    "class": "Material",
+    "persistentId": "7e96ddd2-55d9-4832-a567-6c561df2424a",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/covet/3wheel/big_wheel_ao.data.png",
+        "baseColorMap": "/vehicles/covet/3wheel/big_wheel_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/covet/3wheel/big_wheel_m.data.png",
+        "normalMap": "/vehicles/covet/3wheel/big_wheel_nm.normal.png",
+        "roughnessMap": "/vehicles/covet/3wheel/big_wheel_r.data.png"
+      },
+      {
+        "metallicFactor": null
+      },
+      {
+        "metallicFactor": null
+      },
+      {
+        "metallicFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "covet": {
+    "name": "covet",
+    "mapTo": "covet_old",
+    "class": "Material",
+    "persistentId": "7adc8b1a-7fb8-473f-b716-099e7000e418",
+    "Stages": [
+      {
+        "colorMap": "vehicles/common/null.dds",
+        "normalMap": "vehicles/covet/covet_n.dds",
+        "pixelSpecular": true,
+        "specularMap": "vehicles/common/null.dds",
+        "specularPower": 128,
+        "useAnisotropic": true
+      },
+      {
+        "colorMap": "vehicles/covet/covet_d.dds",
+        "normalMap": "vehicles/covet/covet_n.dds",
+        "pixelSpecular": true,
+        "specularMap": "vehicles/covet/covet_s.dds",
+        "specularPower": 32,
+        "useAnisotropic": true
+      },
+      {
+        "colorMap": "vehicles/covet/covet_c.dds",
+        "instanceDiffuse": true,
+        "normalMap": "vehicles/covet/covet_n.dds",
+        "pixelSpecular": true,
+        "specularMap": "vehicles/covet/covet_s.dds",
+        "specularPower": 10,
+        "useAnisotropic": true
+      },
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None"
+  },
+  "covet_bumpers": {
+    "name": "covet_bumpers",
+    "mapTo": "covet_bumpers",
+    "class": "Material",
+    "persistentId": "5e1d336c-0df5-4a15-aa0c-15621bdfddad",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_bumpers_ao.data.png",
+        "baseColorMap": "/vehicles/covet/covet_bumpers_b.color.png",
+        "instanceDiffuse": false,
+        "metallicFactor": 0,
+        "normalMap": "vehicles/covet/covet_bumpers_n.normal.png",
+        "opacityFactor": 0,
+        "pixelSpecular": true,
+        "roughnessMap": "/vehicles/covet/covet_bumpers_r.data.png",
+        "useAnisotropic": true
+      },
+      {
+        "clearCoatRoughnessFactor": 0
+      },
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "order_simset": 0,
+    "version": 1.5
+  },
+  "covet_carbonfibre": {
+    "name": "covet_carbonfibre",
+    "mapTo": "covet_carbonfibre",
+    "class": "Material",
+    "persistentId": "9824ceab-6a06-493b-b862-9bb10abd3826",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_main_ao.data.png",
+        "baseColorFactor": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "clearCoatFactor": 0.5,
+        "clearCoatRoughnessFactor": 0.0500000007,
+        "normalMap": "/vehicles/covet/covet_main_n.normal.png",
+        "opacityMapUV": true,
+        "pixelSpecular": true,
+        "roughnessMap": "/vehicles/common/carbonfiber_r.data.png",
+        "roughnessMapUV1": true,
+        "useAnisotropic": true
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "order_simset": 1,
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "covet_chmsl": {
+    "name": "covet_chmsl",
+    "mapTo": "covet_chmsl",
+    "class": "Material",
+    "persistentId": "9c986c89-cdec-4d17-be49-b85b5501d41e",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_exhaustflame": {
+    "name": "covet_exhaustflame",
+    "mapTo": "covet_exhaustflame",
+    "class": "Material",
+    "persistentId": "af2f170a-cf1c-4c78-a657-b42db4598676",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_foglight": {
+    "name": "covet_foglight",
+    "mapTo": "covet_foglight",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_foglightglass": {
+    "name": "covet_foglightglass",
+    "mapTo": "covet_foglightglass",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_gauges": {
+    "name": "covet_gauges",
+    "mapTo": "covet_gauges",
+    "class": "Material",
+    "persistentId": "ad2e8ab5-bbe2-44cd-8a1e-f872d5496015",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_gauges_ao.data.png",
+        "baseColorMap": "/vehicles/covet/covet_gauges_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/covet/covet_gauges_m.data.png",
+        "normalMap": "/vehicles/covet/covet_gauges_nm.normal.png",
+        "pixelSpecular": true,
+        "roughnessMap": "/vehicles/covet/covet_gauges_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "covet_gauges_metric": {
+    "name": "covet_gauges_metric",
+    "mapTo": "covet_gauges_metric",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_gauges_ao.data.png",
+        "baseColorMap": "/vehicles/covet/covet_gauges_kmh_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/covet/covet_gauges_m.data.png",
+        "normalMap": "/vehicles/covet/covet_gauges_nm.normal.png",
+        "pixelSpecular": true,
+        "roughnessMap": "/vehicles/covet/covet_gauges_kmh_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "covet_gauges_metric_on": {
+    "name": "covet_gauges_metric_on",
+    "mapTo": "covet_gauges_metric_on",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_gauges_ao.data.png",
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/covet/covet_gauges_kmh_b.color.png",
+        "emissiveFactor": [
+          1,
+          1,
+          1
+        ],
+        "emissiveMap": "/vehicles/covet/covet_gauges_kmh_glow_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/covet/covet_gauges_m.data.png",
+        "normalMap": "/vehicles/covet/covet_gauges_nm.normal.png",
+        "pixelSpecular": true,
+        "roughnessMap": "/vehicles/covet/covet_gauges_kmh_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "covet_gauges_odo": {
+    "name": "covet_gauges_odo",
+    "mapTo": "covet_gauges_odo",
+    "class": "Material",
+    "persistentId": "0e6e9ee1-2e38-42af-88a7-088a9020ea13",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/common/odometer_analog_ao.data.png",
+        "ambientOcclusionMapUseUV": 1,
+        "baseColorMap": "@covet_gauges_odo",
+        "diffuseMapUseUV": 1,
+        "metallicMapUseUV": 1,
+        "normalMap": "/vehicles/common/odometer_analog_nm.normal.png",
+        "normalMapUseUV": 1,
+        "roughnessMap": "/vehicles/common/odometer_analog_r.data.png",
+        "roughnessMapUseUV": 1
+      },
+      {},
+      {},
+      {}
+    ],
+    "version": 1.5
+  },
+  "covet_gauges_on": {
+    "name": "covet_gauges_on",
+    "mapTo": "covet_gauges_on",
+    "class": "Material",
+    "persistentId": "7b42a63d-7c08-498f-81de-4326c2002585",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_gauges_ao.data.png",
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorMap": "/vehicles/covet/covet_gauges_b.color.png",
+        "emissiveFactor": [
+          1,
+          1,
+          1
+        ],
+        "emissiveMap": "/vehicles/covet/covet_gauges_mph_glow_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/covet/covet_gauges_m.data.png",
+        "normalMap": "/vehicles/covet/covet_gauges_nm.normal.png",
+        "pixelSpecular": true,
+        "roughnessMap": "/vehicles/covet/covet_gauges_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "covet_glass": {
+    "name": "covet_glass",
+    "mapTo": "covet_glass",
+    "class": "Material",
+    "persistentId": "e90caaa9-d592-4613-b79a-a23fcf3803af",
+    "Stages": [
+      {
+        "baseColorMap": "vehicles/covet/covet_glass_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/covet/covet_glass_m.data.png",
+        "normalMap": "/vehicles/covet/covet_glass_nm.normal.png",
+        "opacityMap": "/vehicles/covet/covet_glass_o.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.686999977,
+        "roughnessMap": "/vehicles/covet/covet_glass_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "covet_glass_dmg": {
+    "name": "covet_glass_dmg",
+    "mapTo": "covet_glass_dmg",
+    "class": "Material",
+    "persistentId": "9aa7faec-8343-496c-ae11-733692074de3",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_glass_dmg_ao.data.png",
+        "baseColorMap": "/vehicles/covet/covet_glass_dmg_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/covet/covet_glass_dmg_m.data.png",
+        "normalMap": "/vehicles/covet/covet_glass_dmg_nm.normal.png",
+        "opacityMap": "/vehicles/covet/covet_glass_dmg_o.data.png",
+        "pixelSpecular": true,
+        "roughnessMap": "/vehicles/covet/covet_glass_dmg_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 20,
+    "alphaTest": true,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "covet_glass_int": {
+    "name": "covet_glass_int",
+    "mapTo": "covet_glass_int",
+    "class": "Material",
+    "persistentId": "112e1d1f-f382-4d25-868f-9e3574e916d8",
+    "Stages": [
+      {
+        "baseColorMap": "vehicles/covet/covet_glass_b.color.png",
+        "opacityMap": "/vehicles/covet/covet_glass_o.data.DDS",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.445299804
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 171,
+    "alphaTest": true,
+    "castShadows": false,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "covet_glass_on": {
+    "name": "covet_glass_on",
+    "mapTo": "covet_glass_on",
+    "class": "Material",
+    "persistentId": "b35acf97-2572-48d7-b8e5-f5b80045f133",
+    "Stages": [
+      {
+        "baseColorMap": "vehicles/covet/covet_glass_b.color.png",
+        "emissiveFactor": [
+          1.5,
+          1.5,
+          1.5
+        ],
+        "emissiveMap": "/vehicles/covet/covet_glass_g.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/covet/covet_glass_m.data.png",
+        "normalMap": "/vehicles/covet/covet_glass_nm.normal.png",
+        "opacityMap": "/vehicles/covet/covet_glass_o.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.686999977,
+        "roughnessMap": "/vehicles/covet/covet_glass_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "covet_glass_on_intense": {
+    "name": "covet_glass_on_intense",
+    "mapTo": "covet_glass_on_intense",
+    "class": "Material",
+    "persistentId": "b35acf97-2572-48d7-b8e5-f5b80045f133",
+    "Stages": [
+      {
+        "baseColorMap": "vehicles/covet/covet_glass_b.color.png",
+        "emissiveFactor": [
+          1.5,
+          1.5,
+          1.5
+        ],
+        "emissiveMap": "/vehicles/covet/covet_glass_intense_g.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/covet/covet_glass_m.data.png",
+        "normalMap": "/vehicles/covet/covet_glass_nm.normal.png",
+        "opacityMap": "/vehicles/covet/covet_glass_o.data.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0.686999977,
+        "roughnessMap": "/vehicles/covet/covet_glass_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "covet_headlight": {
+    "name": "covet_headlight",
+    "mapTo": "covet_headlight",
+    "class": "Material",
+    "persistentId": "73c45d3f-ccc6-4026-9ef7-42020fd8dae6",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_headlightglass": {
+    "name": "covet_headlightglass",
+    "mapTo": "covet_headlightglass",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_highbeam": {
+    "name": "covet_highbeam",
+    "mapTo": "covet_highbeam",
+    "class": "Material",
+    "persistentId": "5d9ad9f8-d5e7-45ec-9c3c-ff664e89dfb3",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_highbeamglass": {
+    "name": "covet_highbeamglass",
+    "mapTo": "covet_highbeamglass",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_interior": {
+    "name": "covet_interior",
+    "mapTo": "covet_interior",
+    "class": "Material",
+    "persistentId": "212bbfc1-2cf4-474e-8757-8b4052512f1d",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_interior_ao.data.png",
+        "baseColorMap": "/vehicles/covet/covet_interior_b.color.png",
+        "clearCoatRoughnessFactor": 0,
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/covet/covet_interior_m.data.png",
+        "normalMap": "/vehicles/covet/covet_interior_nm.normal.png",
+        "pixelSpecular": true,
+        "roughnessMap": "/vehicles/covet/covet_interior_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "covet_lettering": {
+    "name": "covet_lettering",
+    "mapTo": "covet_lettering",
+    "class": "Material",
+    "persistentId": "3bbcf471-4581-4ead-baf0-ed0bd2abd8b3",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_lettering_ao.data.png",
+        "baseColorMap": "/vehicles/covet/covet_lettering_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/covet/covet_lettering_m.data.png",
+        "normalMap": "/vehicles/covet/covet_lettering_nm.normal.png",
+        "opacityMap": "/vehicles/covet/covet_lettering_o.data.png",
+        "pixelSpecular": true,
+        "reflectivityMap": "vehicles/covet/covet_lettering_s.dds",
+        "roughnessMap": "/vehicles/covet/covet_lettering_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 149,
+    "alphaTest": true,
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "materialTag2": "decal",
+    "version": 1.5
+  },
+  "covet_lights": {
+    "name": "covet_lights",
+    "mapTo": "covet_lights",
+    "class": "Material",
+    "persistentId": "66c299a6-2bee-4b0b-8147-f88d61b0cffb",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_lights_ao.data.png",
+        "baseColorMap": "/vehicles/covet/covet_lights_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/covet/covet_lights_m.data.png",
+        "normalMap": "/vehicles/covet/covet_lights_nm.normal.png",
+        "pixelSpecular": true,
+        "roughnessMap": "/vehicles/covet/covet_lights_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "covet_lights_dmg": {
+    "name": "covet_lights_dmg",
+    "mapTo": "covet_lights_dmg",
+    "class": "Material",
+    "persistentId": "be16b91f-ed14-42e6-9f14-537711f66711",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_lights_ao.data.png",
+        "baseColorMap": "/vehicles/covet/covet_lights_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/covet/covet_lights_m.data.png",
+        "normalMap": "/vehicles/covet/covet_lights_nm.normal.png",
+        "pixelSpecular": true,
+        "roughnessMap": "/vehicles/covet/covet_lights_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "covet_lights_on": {
+    "name": "covet_lights_on",
+    "mapTo": "covet_lights_on",
+    "class": "Material",
+    "persistentId": "619dc780-5287-4d3c-a5a8-785689729bb9",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_lights_ao.data.png",
+        "baseColorMap": "/vehicles/covet/covet_lights_b.color.png",
+        "emissiveFactor": [
+          1,
+          0.999989986,
+          0.999989986
+        ],
+        "emissiveMap": "/vehicles/covet/covet_lights_g.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/covet/covet_lights_m.data.png",
+        "normalMap": "/vehicles/covet/covet_lights_nm.normal.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0,
+        "roughnessMap": "/vehicles/covet/covet_lights_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "covet_lights_on_intense": {
+    "name": "covet_lights_on_intense",
+    "mapTo": "covet_lights_on_intense",
+    "class": "Material",
+    "persistentId": "619dc780-5287-4d3c-a5a8-785689729bb9",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_lights_ao.data.png",
+        "baseColorMap": "/vehicles/covet/covet_lights_b.color.png",
+        "emissiveFactor": [
+          1.5,
+          1.5,
+          1.5
+        ],
+        "emissiveMap": "/vehicles/covet/covet_lights_g.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/covet/covet_lights_m.data.png",
+        "normalMap": "/vehicles/covet/covet_lights_nm.normal.png",
+        "pixelSpecular": true,
+        "roughnessFactor": 0,
+        "roughnessMap": "/vehicles/covet/covet_lights_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "covet_lowbeam": {
+    "name": "covet_lowbeam",
+    "mapTo": "covet_lowbeam",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_lowbeamglass": {
+    "name": "covet_lowbeamglass",
+    "mapTo": "covet_lowbeamglass",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_main": {
+    "name": "covet_main",
+    "mapTo": "covet",
+    "class": "Material",
+    "persistentId": "c149d182-981e-4864-8d0d-6449b0372ece",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_main_ao.data.png",
+        "baseColorMap": "/vehicles/covet/covet_main_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/covet/covet_main_m.data.png",
+        "normalMap": "/vehicles/covet/covet_main_nm.normal.png",
+        "roughnessMap": "/vehicles/covet/covet_main_r.data.png"
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_main_ao.data.png",
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/covet/covet_main_cc.data.png",
+        "colorPaletteMap": "/vehicles/covet/covet_main_p.color.png",
+        "colorPaletteMapUseUV": 1,
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/covet/covet_main_nm.normal.png",
+        "opacityMap": "/vehicles/covet/covet_main_c.data.png"
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "covet_mechanical": {
+    "name": "covet_mechanical",
+    "mapTo": "covet_mechanical",
+    "class": "Material",
+    "persistentId": "84d18603-ef73-406c-a55b-850cb87ab4f8",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_mechanical_ao.data.png",
+        "baseColorMap": "/vehicles/covet/covet_mechanical_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/covet/covet_mechanical_m.data.png",
+        "normalMap": "/vehicles/covet/covet_mechanical_nm.normal.png",
+        "roughnessMap": "/vehicles/covet/covet_mechanical_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "covet_parkinglight": {
+    "name": "covet_parkinglight",
+    "mapTo": "covet_parkinglight",
+    "class": "Material",
+    "persistentId": "654e7c92-e2b3-4256-bb9a-37ce430679b2",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_reverselight": {
+    "name": "covet_reverselight",
+    "mapTo": "covet_reverselight",
+    "class": "Material",
+    "persistentId": "e075eebf-9299-49ba-9c6a-c2fe1227be5a",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_reverselightglass": {
+    "name": "covet_reverselightglass",
+    "mapTo": "covet_reverselightglass",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_sidemarker": {
+    "name": "covet_sidemarker",
+    "mapTo": "covet_sidemarker",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_sidemarkerglass": {
+    "name": "covet_sidemarkerglass",
+    "mapTo": "covet_sidemarkerglass",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_signal_L": {
+    "name": "covet_signal_L",
+    "mapTo": "covet_signal_L",
+    "class": "Material",
+    "persistentId": "8e7a4e1c-a81d-41f1-b6d2-d199a87712ac",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_signal_L_us": {
+    "name": "covet_signal_L_us",
+    "mapTo": "covet_signal_L_us",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_signal_R": {
+    "name": "covet_signal_R",
+    "mapTo": "covet_signal_R",
+    "class": "Material",
+    "persistentId": "cb9d5925-786c-4c5a-b559-a56549b8d847",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_signal_R_us": {
+    "name": "covet_signal_R_us",
+    "mapTo": "covet_signal_R_us",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_signalglass_L": {
+    "name": "covet_signalglass_L",
+    "mapTo": "covet_signalglass_L",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_signalglass_L_us": {
+    "name": "covet_signalglass_L_us",
+    "mapTo": "covet_signalglass_L_us",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_signalglass_R": {
+    "name": "covet_signalglass_R",
+    "mapTo": "covet_signalglass_R",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_signalglass_R_us": {
+    "name": "covet_signalglass_R_us",
+    "mapTo": "covet_signalglass_R_us",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_stripped_int": {
+    "name": "covet_stripped_int",
+    "mapTo": "covet_stripped_int",
+    "class": "Material",
+    "persistentId": "c9427650-79e7-481b-a508-e41c0e53254d",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_stripped_int_ao.data.png",
+        "baseColorMap": "/vehicles/covet/covet_stripped_int_b.color.png",
+        "metallicFactor": 1,
+        "normalMap": "vehicles/covet/covet_stripped_int_nm.normal.png",
+        "roughnessMap": "/vehicles/covet/covet_stripped_int_r.data.png"
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_stripped_int_ao.data.png",
+        "baseColorMap": "/vehicles/covet/covet_stripped_int_b.color.png",
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/covet/covet_stripped_int_cc.data.png",
+        "colorPaletteMap": "/vehicles/common/nullcolormaskR.dds",
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/covet/covet_stripped_int_nm.normal.png",
+        "opacityMap": "/vehicles/covet/covet_stripped_int_c.data.png"
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "covet_taillight": {
+    "name": "covet_taillight",
+    "mapTo": "covet_taillight",
+    "class": "Material",
+    "persistentId": "132ae390-9dc3-4ba5-b1b7-4ee4a5bbb90c",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_taillightglass": {
+    "name": "covet_taillightglass",
+    "mapTo": "covet_taillightglass",
+    "class": "Material",
+    "Stages": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "covet_windshield_dmg": {
+    "name": "covet_windshield_dmg",
+    "mapTo": "covet_windshield_dmg",
+    "class": "Material",
+    "persistentId": "a58bce1f-d1d1-4748-9d84-e742e16eb0b2",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/covet/covet_glass_dmg_ao.data.png",
+        "baseColorMap": "/vehicles/covet/covet_glass_dmg_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/covet/covet_glass_dmg_m.data.png",
+        "normalMap": "vehicles/common/windshield_dmg_n.dds",
+        "opacityMap": "/vehicles/covet/covet_glass_dmg_o.data.png",
+        "pixelSpecular": true,
+        "roughnessMap": "/vehicles/covet/covet_glass_dmg_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "castShadows": false,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "translucent": true,
+    "translucentBlendOp": "PreMulAlpha",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "autobuggy_main": {
+    "name": "autobuggy_main",
+    "mapTo": "autobuggy_main",
+    "class": "material",
+    "persistentId": "102f7085-2307-4a6c-911e-30518475054e",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/autobello/autobuggy/autobuggy_main_ao.data.png",
+        "baseColorMap": "/vehicles/autobello/autobuggy/autobuggy_main_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/autobello/autobuggy/autobuggy_main_m.data.png",
+        "normalMap": "/vehicles/autobello/autobuggy/autobuggy_main_nm.normal.png",
+        "roughnessMap": "/vehicles/autobello/autobuggy/autobuggy_main_r.data.png"
+      },
+      {
+        "ambientOcclusionMap": "/vehicles/autobello/autobuggy/autobuggy_main_ao.data.png",
+        "clearCoatFactor": 1,
+        "clearCoatMap": "/vehicles/autobello/autobuggy/autobuggy_main_cc.data.png",
+        "colorPaletteMap": "/vehicles/autobello/autobuggy/autobuggy_main_palette.color.png",
+        "instanceDiffuse": true,
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/autobello/autobuggy/autobuggy_main_nm.normal.png",
+        "opacityMap": "/vehicles/autobello/autobuggy/autobuggy_main_c.data.png"
+      },
+      {},
+      {}
+    ],
+    "activeLayers": 2,
+    "dynamicCubemap": true,
+    "materialTag0": "beamng",
+    "materialTag1": "vehicle",
+    "version": 1.5
+  },
+  "autobuggy_mechanic": {
+    "name": "autobuggy_mechanic",
+    "mapTo": "autobuggy_mechanic",
+    "class": "Material",
+    "persistentId": "",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/autobello/autobuggy/autobuggy_mechanic_ao.data.png",
+        "baseColorMap": "/vehicles/autobello/autobuggy/autobuggy_mechanic_b.color.png",
+        "metallicFactor": 1,
+        "metallicMap": "/vehicles/autobello/autobuggy/autobuggy_mechanic_m.data.png",
+        "normalMap": "/vehicles/autobello/autobuggy/autobuggy_mechanic_nm.normal.png",
+        "roughnessMap": "/vehicles/autobello/autobuggy/autobuggy_mechanic_r.data.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "autobuggy_gauges_odo": {
+    "name": "autobuggy_gauges_odo",
+    "mapTo": "autobuggy_gauges_odo",
+    "class": "Material",
+    "Stages": [
+      {
+        "ambientOcclusionMap": "/vehicles/common/odometer_analog_ao.data.png",
+        "ambientOcclusionMapUseUV": 1,
+        "baseColorMap": "@autobuggy_gauges_odo",
+        "diffuseMapUseUV": 1,
+        "metallicMapUseUV": 1,
+        "normalMap": "/vehicles/common/odometer_analog_nm.normal.png",
+        "normalMapUseUV": 1,
+        "roughnessMap": "/vehicles/common/odometer_analog_r.data.png",
+        "roughnessMapUseUV": 1
+      },
+      {},
+      {},
+      {}
+    ],
+    "version": 1.5
+  },
+  "toplvlcrawler": {
+    "name": "toplvlcrawler",
+    "mapTo": "toplvlcrawler",
+    "class": "Material",
+    "persistentId": "5d9f97c3-ef38-4dd2-9232-4460514fb65e",
+    "Stages": [
+      {
+        "colorMap": "vehicles/pickup/deserttruck/pickupcage_toplvlcrawler_d.color.png",
+        "normalMap": "vehicles/pickup/deserttruck/pickupcage_toplvlcrawler_n.normal.png",
+        "pixelSpecular": true,
+        "reflectivityMap": "vehicles/pickup/deserttruck/pickupcage_toplvlcrawler_r.color.png",
+        "specularMap": "vehicles/pickup/deserttruck/pickupcage_toplvlcrawler_s.color.png"
+      },
+      {},
+      {},
+      {}
+    ],
+    "alphaRef": 0,
+    "dynamicCubemap": true,
+    "translucent": true,
+    "translucentBlendOp": "None"
+  },
+}

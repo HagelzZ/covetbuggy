@@ -1,0 +1,44 @@
+{
+    "attachments": [
+        {
+            "data_filename": "1041583.jpg",
+            "original_filename": "20230713014736_12.jpg",
+            "thumb_filename": "thumbs\/1041583.jpg"
+        },
+        {
+            "data_filename": "1041584.jpg",
+            "original_filename": "20230712175132_1.jpg",
+            "thumb_filename": "thumbs\/1041584.jpg"
+        },
+        {
+            "data_filename": "1041585.jpg",
+            "original_filename": "20230713014711_1.jpg",
+            "thumb_filename": "thumbs\/1041585.jpg"
+        }
+    ],
+    "resource_id": 27509,
+    "current_version_id": 48315,
+    "download_count": 0,
+    "resource_version_id": 49255,
+    "version_string": "1.1",
+    "last_update": 1690368523,
+    "rating_avg": 4.66667,
+    "rating_count": 0,
+    "rating_sum": 0,
+    "resource_category_id": 7,
+    "resource_date": 1690368523,
+    "review_count": 3,
+    "tag_line": "A Buggy-converted Ibishu Covet",
+    "update_count": 2,
+    "path": "MC8L1TD9A\/48315\/",
+    "filename": "covetbuggy.zip",
+    "title": "[Twin Auto Group] Covet Buggy",
+    "user_id": 543615,
+    "username": "niTniT",
+    "tagid": "MC8L1TD9A",
+    "message": "[B]Twin Auto Group[\/B] is a fictitious fabrication company made up by me, niTniT, for my automotive-focus content ventures.\n\nThe [B]Covet Buggy[\/B] is a simple mod made by merging parts from the Ibishu Covet, Autobello Piccolina Buggy and some other miscellaneous parts from offroaders and crawlers.\n\n[B]Current featureset:[\/B]\n[LIST]\n[*]Some I4 engines from the Ibishu Covet with strengthened internals.\n\n[*]Center- to 8-lug wheels.\n[*]All the transmissions from the Ibushu Covet.\n[\/LIST]\n[B]Planned updates:[\/B]\n[LIST]\n[*][B][DONE!] The F4 engines from the Autobello Piccolina.[\/B]\n[*]Various V8's.\n[*]Driver aids (stability control, traction control).\n\n[*]AWD.\n[*]Lockable differentials for crawling.\n[\/LIST]\n[B]Known issues:[\/B]\n[LIST]\n[*]I am currently aware that, for some reason, the wheels like to detach at random.\n[*]Due to the low low-end torque on the Covet I4's, the clutch likes to overheat, however i have semi-remedied this with a much heavier clutch\/flywheel.\n[*]Due to some .jbeam weirdness some parts wobble at random, and the interior deforms slightly.\n[\/LIST]\n[B]Support\/feedback\/feature requests:[\/B]\nI probably won't check this thread much, and i apologize in advance for that - However i can be contacted on Discord, either via the dedicated thread for my mod on there, or via DM's @ nitnit_\n\n[URL]https:\/\/www.youtube.com\/shorts\/BMKyYy0jHXs[\/URL]\n[URL]https:\/\/www.youtube.com\/shorts\/bZ2x-acFKAg[\/URL]\n[ATTACH]1041584[\/ATTACH]\n[ATTACH]1041585[\/ATTACH]\n[ATTACH]1041586[\/ATTACH]",
+    "category_title": "",
+    "prefix_title": "Alpha",
+    "via": "packed by repo on Mon, 28 Aug 2023 18:01:34 GMT",
+    "hashes": []
+}

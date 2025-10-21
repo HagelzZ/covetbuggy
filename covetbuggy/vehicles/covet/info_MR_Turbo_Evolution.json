@@ -1,0 +1,26 @@
+{
+  "0-100 km/h":15.14,
+  "100-0 km/h":44.35,
+
+  "Braking G":0.97,
+  "Config Type":"Offroad",
+  "Configuration":"MR Turbo (M)",
+  "Description":"The base model of the Covet Buggy.",
+  "Drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"Turbo-charged",
+  "Off-Road Score":45,
+  "Performance Class":"4",
+  "Population":2,
+  "Power":271,
+  "PowerPeakRPM":"6500-7500",
+  "Propulsion":"ICE",
+  "Top Speed":61.1111,
+  "Torque":296,
+  "TorquePeakRPM":"5000 - 6500",
+  "Transmission":"Manual",
+  "Value":135000,
+  "Weight":1725,
+  "Weight/Power":6.36531365314,
+  "defaultPaintName1":"Deep Plum"
+}

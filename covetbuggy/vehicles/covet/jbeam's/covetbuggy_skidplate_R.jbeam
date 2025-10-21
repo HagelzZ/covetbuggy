@@ -1,0 +1,60 @@
+{"covetbuggy_skidplate_R":
+{
+    "information":{
+        "authors":"niTniT",
+        "name":"Rear Skidplate",
+        "value":500,
+    },
+    "slotType" :"covetbuggy_skidplate_R",
+    "flexbodies":[
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["covetbuggy_rearpanel", ["skidplate"]],
+    ],
+    "nodes":[
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":true},
+         {"collision":true},
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+
+         {"nodeWeight":2.0},
+         {"group":"skidplate"},
+         ["cb_skp1", 0.00000, 2.29424, 0.19201],
+         {"group":""},
+    ],
+    "beams":[
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+
+          {"beamSpring":1001000,"beamDamp":30},
+          {"beamDeform":45000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":1.2},
+          ["cb_skp1", "cb_r1ll"],
+          ["cb_skp1", "cb_r1rr"],
+          ["cb_skp1", "cb_r2rr"],
+          ["cb_skp1", "cb_r2"],
+          ["cb_skp1", "cb_r2ll"],
+          {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+          {"deformLimitExpansion":""},
+          ["cb_skp1", "cb_r3r"],
+          ["cb_skp1", "cb_r3l"],
+          ["cb_skp1", "cb_r4ll"],
+          ["cb_skp1", "cb_r4r"],
+          ["cb_skp1", "cb_r4l"],
+          ["cb_skp1", "cb_r4rr"],
+    ],
+    "triangles":[
+        ["id1:", "id2:", "id3:"],
+        {"groundModel":"metal"},
+
+        {"dragCoef":3},
+        {"group":"covetbuggy_skidplate"},
+        ["cb_r2ll", "cb_skp1", "cb_r2"],
+        ["cb_r2", "cb_skp1", "cb_r2rr"],
+        ["cb_skp1", "cb_r1rr", "cb_r2rr"],
+        ["cb_skp1", "cb_r2ll", "cb_r1ll"],
+        ["cb_r1ll", "cb_r1rr", "cb_skp1"],
+        {"group":""},
+    ],
+},
+}

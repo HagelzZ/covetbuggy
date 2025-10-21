@@ -1,0 +1,26 @@
+{
+  "0-100 km/h":7.3,
+  "100-0 km/h":44.14,
+
+  "Braking G":0.81,
+  "Config Type":"Extreme",
+  "Configuration":"Border Runner (S)",
+  "Description":"High-powered buggy configuration popular for less-than-legal operations in sandy terrain.",
+  "Drivetrain":"RWD",
+  "Fuel Type":"Gasoline",
+  "Induction Type":"Turbo-charged",
+  "Off-Road Score":64,
+  "Performance Class":"5",
+  "Population":3,
+  "Power":895,
+  "PowerPeakRPM":"10000-11000",
+  "Propulsion":"ICE",
+  "Top Speed":95.5556,
+  "Torque":682,
+  "TorquePeakRPM":"8000 - 9000",
+  "Transmission":"Manual Sequential",
+  "Value":250000,
+  "Weight":1738,
+  "Weight/Power":1.94301675978,
+  "defaultPaintName1":"Gray"
+}

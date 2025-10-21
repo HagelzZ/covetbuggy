@@ -1,0 +1,265 @@
+{
+    "covetbuggy_wcf4_differential_R": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Open Rear Differential",
+            "value":1750,
+        },
+        "slotType" : "covetbuggy_wcf4_differential_R",
+        "slots": [
+            ["type", "default", "description"],
+            ["covetbuggy_wcf4_finaldrive_R","covetbuggy_wcf4_finaldrive_R_344", "Rear Final Drive", {"coreSlot":true}],
+            ["covetbuggy_halfshaft_wcf4","covetbuggy_halfshaft_wcf4", "Rear Halfshafts"],
+        ],
+        "powertrain" : [
+            ["type", "name", "inputName", "inputIndex"],
+            ["differential", "differential_R", "gearbox", 1, {"diffType":"open", "uiName":"Rear Differential","defaultVirtualInertia":0.25}],
+        ],
+        "differential_R": {
+            "friction": 3.7,
+            "dynamicFriction": 0.0018,
+            "torqueLossCoef": 0.03,
+        },
+        "nodes": [
+             ["id", "posX", "posY", "posZ"],
+             {"frictionCoef":0.5},
+             {"nodeMaterial":"|NM_METAL"},
+             {"selfCollision":false},
+             {"collision":true},
+             {"group":"covetbuggy_wcf4_reardiff"},
+             {"nodeWeight":24},
+             ["cb_rdiff", 0.00000, 2.08277, 0.17601],
+             {"group":""},
+        ],
+        "beams": [
+              ["id1:", "id2:"],
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+              {"beamSpring":7700550,"beamDamp":125},
+              {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+              //differential
+              ["cb_rdiff","cb_e1r"],
+              ["cb_rdiff","cb_e3r"],
+              ["cb_rdiff","cb_e1l"],
+              ["cb_rdiff","cb_e3l"],
+              ["cb_rdiff","cb_tra1"],
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        ],
+    },
+    "covetbuggy_wcf4_differential_R_welded": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Welded Rear Differential",
+            "value":1900,
+        },
+        "slotType" : "covetbuggy_wcf4_differential_R",
+        "slots": [
+            ["type", "default", "description"],
+            ["covetbuggy_wcf4_finaldrive_R","covetbuggy_wcf4_finaldrive_R_344", "Rear Final Drive", {"coreSlot":true}],
+            ["covetbuggy_halfshaft_wcf4","covetbuggy_halfshaft_wcf4", "Rear Halfshafts"],
+        ],
+        "powertrain" : [
+            ["type", "name", "inputName", "inputIndex"],
+            ["differential", "differential_R", "gearbox", 1, {"diffType":"locked", "lockTorque":10000, "uiName":"Rear Differential","defaultVirtualInertia":0.25}],
+        ],
+        "differential_R": {
+            "friction": 3.7,
+            "dynamicFriction": 0.0018,
+            "torqueLossCoef": 0.03,
+        },
+        "nodes": [
+             ["id", "posX", "posY", "posZ"],
+             {"frictionCoef":0.5},
+             {"nodeMaterial":"|NM_METAL"},
+             {"selfCollision":false},
+             {"collision":true},
+             {"group":"covetbuggy_wcf4_reardiff"},
+             {"nodeWeight":24},
+             ["cb_rdiff", 0.00000, 2.08277, 0.17601],
+             {"group":""},
+        ],
+        "beams": [
+              ["id1:", "id2:"],
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+              {"beamSpring":7700550,"beamDamp":125},
+              {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+              //differential
+              ["cb_rdiff","cb_e1r"],
+              ["cb_rdiff","cb_e3r"],
+              ["cb_rdiff","cb_e1l"],
+              ["cb_rdiff","cb_e3l"],
+              ["cb_rdiff","cb_tra1"],
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        ],
+    },
+    "covetbuggy_wcf4_differential_R_LSD": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Limited Slip Rear Differential",
+            "value":2150,
+        },
+        "slotType" : "covetbuggy_wcf4_differential_R",
+        "slots": [
+            ["type", "default", "description"],
+            ["covetbuggy_wcf4_finaldrive_R","covetbuggy_wcf4_finaldrive_R_344", "Rear Final Drive", {"coreSlot":true}],
+            ["covetbuggy_halfshaft_wcf4","covetbuggy_halfshaft_wcf4", "Rear Halfshafts"],
+        ],
+        "powertrain" : [
+            ["type", "name", "inputName", "inputIndex"],
+            ["differential", "differential_R", "gearbox", 1, {"diffType":"lsd", "lsdPreload":100, "lsdLockCoef":0.1, "lsdRevLockCoef":0.025, "uiName":"Rear Differential","defaultVirtualInertia":0.25}],
+        ],
+        "differential_R": {
+            "friction": 3.7,
+            "dynamicFriction": 0.0018,
+            "torqueLossCoef": 0.03,
+        },
+        "nodes": [
+             ["id", "posX", "posY", "posZ"],
+             {"frictionCoef":0.5},
+             {"nodeMaterial":"|NM_METAL"},
+             {"selfCollision":false},
+             {"collision":true},
+             {"group":"covetbuggy_wcf4_reardiff"},
+             {"nodeWeight":24},
+             ["cb_rdiff", 0.00000, 2.08277, 0.17601],
+             {"group":""},
+        ],
+        "beams": [
+              ["id1:", "id2:"],
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+              {"beamSpring":7700550,"beamDamp":125},
+              {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+              //differential
+              ["cb_rdiff","cb_e1r"],
+              ["cb_rdiff","cb_e3r"],
+              ["cb_rdiff","cb_e1l"],
+              ["cb_rdiff","cb_e3l"],
+              ["cb_rdiff","cb_tra1"],
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        ],
+    },
+    "covetbuggy_wcf4_differential_R_race": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Race Limited Slip Rear Differential",
+            "value":3850,
+        },
+        "slotType" : "covetbuggy_wcf4_differential_R",
+        "slots": [
+            ["type", "default", "description"],
+            ["covetbuggy_wcf4_finaldrive_R","covetbuggy_wcf4_finaldrive_R_race", "Rear Final Drive", {"coreSlot":true}],
+            ["covetbuggy_halfshaft_wcf4","covetbuggy_halfshaft_wcf4", "Rear Halfshafts"],
+        ],
+        "variables": [
+            ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+            ["$lsdpreload_R", "range", "N/m", "Differentials", 150, 0, 500, "Pre-load Torque", "Initial locking torque between left and right wheels", {"subCategory":"Rear"}]
+            ["$lsdlockcoef_R", "range", "", "Differentials", 0.12, 0, 0.5, "Power Lock Rate", "Additional locking torque proportional to engine torque", {"minDis":0, "maxDis":100,"subCategory":"Rear"}],
+            ["$lsdlockcoefrev_R", "range", "", "Differentials", 0.06, 0, 0.5, "Coast Lock Rate", "Additional locking torque proportional to engine braking", {"minDis":0, "maxDis":100,"subCategory":"Rear"}],
+        ],
+        "powertrain" : [
+            ["type", "name", "inputName", "inputIndex"],
+            ["differential", "differential_R", "gearbox", 1, {"diffType":"lsd", "lsdPreload":"$lsdpreload_R", "lsdLockCoef":"$lsdlockcoef_R", "lsdRevLockCoef":"$lsdlockcoefrev_R", "uiName":"Rear Differential","defaultVirtualInertia":0.25}],
+        ],
+        "differential_R": {
+            "friction": 3.7,
+            "dynamicFriction": 0.0018,
+            "torqueLossCoef": 0.03,
+        },
+        "nodes": [
+             ["id", "posX", "posY", "posZ"],
+             {"frictionCoef":0.5},
+             {"nodeMaterial":"|NM_METAL"},
+             {"selfCollision":false},
+             {"collision":true},
+             {"group":"covetbuggy_wcf4_reardiff"},
+             {"nodeWeight":24},
+             ["cb_rdiff", 0.00000, 2.08277, 0.17601],
+             {"group":""},
+        ],
+        "beams": [
+              ["id1:", "id2:"],
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+              {"beamSpring":7700550,"beamDamp":125},
+              {"beamDeform":660000,"beamStrength":"FLT_MAX"},
+              //differential
+              ["cb_rdiff","cb_e1r"],
+              ["cb_rdiff","cb_e3r"],
+              ["cb_rdiff","cb_e1l"],
+              ["cb_rdiff","cb_e3l"],
+              ["cb_rdiff","cb_tra1"],
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        ],
+    },
+"covetbuggy_wcf4_finaldrive_R_344": {
+    "information":{
+        "authors":"niTniT",
+        "name":"3.44:1 Rear Final Drive",
+        "value":250,
+    },
+
+    "slotType" : "covetbuggy_wcf4_finaldrive_R",
+
+    "differential_R" : {
+        "gearRatio":3.44,
+    },
+},
+"covetbuggy_wcf4_finaldrive_R_393": {
+    "information":{
+        "authors":"niTniT",
+        "name":"3.93:1 Rear Final Drive",
+        "value":250,
+    },
+
+    "slotType" : "covetbuggy_wcf4_finaldrive_R",
+
+    "differential_R" : {
+        "gearRatio":3.93,
+    },
+},
+"covetbuggy_wcf4_finaldrive_R_race": {
+    "information":{
+        "authors":"niTniT",
+        "name":"Race Adjustable Rear Final Drive",
+        "value":650,
+    },
+
+    "slotType" : "covetbuggy_wcf4_finaldrive_R",
+
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$finaldrive_R", "range", ":1", "Differentials", 3.44, 2.0, 6.0, "Final Drive Gear Ratio", "Torque multiplication ratio", {"subCategory":"Rear", "stepDis":0.01}],
+    ],
+
+    "differential_R" : {
+        "gearRatio":"$finaldrive_R",
+    },
+},
+"covetbuggy_halfshaft_wcf4": {
+    "information":{
+        "authors":"niTniT",
+        "name":"Extended Rear Halfshafts",
+        "value":400,
+    },
+    "slotType" : "covetbuggy_halfshaft_wcf4",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["covetbuggy_halfshaft_wcf4", ["covetbuggy_wcf4_transaxle", "wheelhub_RR","wheelhub_RL"]],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //halfshafts
+          {"beamPrecompression":1, "beamType":"|BOUNDED", "beamLongBound":0.14, "beamShortBound":0.14},
+          {"beamSpring":0,"beamDamp":0,"beamDeform":7000,"beamStrength":9000},
+          {"beamLimitSpring":5001000,"beamLimitDamp":100},
+          ["rw1r","cb_tra2r", {"name":"halfshaft_RR", "breakGroup":"wheel_RR", "breakGroupType":1, "deformGroup":"wheelaxleRR", "deformationTriggerRatio":0.001, "optional":true}],
+          ["rw1l","cb_tra2l", {"name":"halfshaft_RL", "breakGroup":"wheel_RL", "breakGroupType":1, "deformGroup":"wheelaxleRL", "deformationTriggerRatio":0.001, "optional":true}],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "powertrain" : [
+        ["type", "name", "inputName", "inputIndex"],
+        ["shaft", "wheelaxleRL", "differential_R", 1, {"deformGroups":["wheelaxleRL"], "breakTriggerBeam":"halfshaft_RL", "uiName":"Rear Left Halfshaft", "friction":1.05, "dynamicFriction": 0.0026}],
+        ["shaft", "wheelaxleRR", "differential_R", 2, {"deformGroups":["wheelaxleRR"], "breakTriggerBeam":"halfshaft_RR", "uiName":"Rear Right Halfshaft" "friction":1.05, "dynamicFriction": 0.0026}],
+    ],
+},
+}

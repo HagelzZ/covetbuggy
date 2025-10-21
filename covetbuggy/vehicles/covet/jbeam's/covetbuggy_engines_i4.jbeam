@@ -1,0 +1,2220 @@
+{
+    "covetbuggy_engine_1.5_i4": {
+        "information":{
+            "authors":"niTniT",
+            "name":"1.5L DOHC I4 Buggy Engine",
+            "value":24000,
+        },
+        "slotType" : "covetbuggy_engine",
+        "slots": [
+            ["type", "default", "description"],
+            //["covetbuggy_enginemounts_i4","covetbuggy_enginemounts_i4", "Engine Mounts"],
+            ["covetbuggy_intake_i4","covetbuggy_turbo_i4_stage1", "Intake", {"coreSlot":true}],
+            ["covetbuggy_engine_ecu","covetbuggy_engine_ecu", "Engine Management", {"coreSlot":true}],
+            ["covetbuggy_oilpan_i4","covetbuggy_oilpan_i4", "Oil Pan", {"coreSlot":true}],
+            ["cb_n2o_system","", "Nitrous Oxide System"],
+            ["covetbuggy_engine_internals","covetbuggy_engine_internals_heavy", "Engine Long Block", {"coreSlot":true}],
+            ["covetbuggy_exhaust_i4","covetbuggy_exhaust_i4", "Exhaust"],
+            ["covetbuggy_transaxle_i4","covetbuggy_transaxle_i4_5M", "Transaxle"],
+            ["covetbuggy_radiator_i4", "covetbuggy_radiator_i4", "Radiator"],
+            ["covetbuggy_oilcooler", "", "Oilcooler"],
+        ],
+        "powertrain": [
+            ["type", "name", "inputName", "inputIndex"],
+            ["combustionEngine", "mainEngine", "dummy", 0],
+        ],
+        "mainEngine": {
+            "torque":[
+                ["rpm", "torque"],
+                [0, 0],
+                [500,  45],
+                [1000,  78],
+                [1500,  105],
+                [2000,  120],
+                [3000,  140],
+                [4000,  154],
+                [5000,  161],
+                [5500,  161],
+                [6000,  160],
+                [6500,  158],
+                [7000,  150],
+                [7500,  138],
+                [8000,  122],
+                [9000,   75],
+                [10000,  40],
+                [11000,  10],
+            ],
+    
+            "idleRPM":800,
+            "maxRPM":7200,
+            "revLimiterType":"timeBased",
+            "revLimiterCutTime":0.13,
+            "inertia":0.056,
+            "friction":12,
+            "dynamicFriction":0.024,
+            "engineBrakeTorque":30,
+            //"burnEfficiency":0.31
+            "burnEfficiency":[
+                [0, 0.12],
+                [0.05, 0.32],
+                [0.4, 0.44],
+                [0.7, 0.51],
+                [1, 0.37],
+            ],
+            //fuel system
+            "energyStorage": ["fueltank_R", "fueltank_L", "mainTank"],
+            "requiredEnergyType":"gasoline",
+    
+            //exhaust
+            "instantAfterFireSound": "event:>Vehicle>Afterfire>i4_01>single",
+            "sustainedAfterFireSound": "event:>Vehicle>Afterfire>i4_01>multi",
+            "shiftAfterFireSound": "event:>Vehicle>Afterfire>i4_01>shift",
+            "particulates":0.03,
+            "instantAfterFireCoef": 0.75,
+            "sustainedAfterFireCoef": 0.5,
+            "instantAfterFireVolumeCoef": 0.8,
+            "sustainedAfterFireVolumeCoef": 0.5,
+            "shiftAfterFireVolumeCoef": 0.7,
+    
+            //cooling and oil system
+            "thermalsEnabled":true,
+            "engineBlockMaterial":"aluminum",
+            "oilVolume":4,
+    
+            //engine durability
+            "cylinderWallTemperatureDamageThreshold":130,
+            "headGasketDamageThreshold":1500000,
+            "pistonRingDamageThreshold":1500000,
+            "connectingRodDamageThreshold":2000000,
+            "maxTorqueRating": 220,
+            "maxOverTorqueDamage": 300,
+    
+            //node beam interface
+            "torqueReactionNodes:":["cb_e1l","cb_e2l","cb_e4r"],
+            "waterDamage": {"[engineGroup]:":["intake_i4"]},
+            "radiator": {"[engineGroup]:":["radiator"]},
+            "engineBlock": {"[engineGroup]:":["engine_block"]},
+            "breakTriggerBeam":"engine",
+            "uiName":"Engine",
+            "soundConfig": "soundConfig",
+            "soundConfigExhaust": "soundConfigExhaust",
+    
+            //starter motor
+            "starterSample":"event:>Engine>Starter>i4_2001_eng",
+            "starterSampleExhaust":"event:>Engine>Starter>i4_2001_exh",
+            "shutOffSampleEngine":"event:>Engine>Shutoff>i4_2001_eng",
+            "shutOffSampleExhaust":"event:>Engine>Shutoff>i4_2001_exh",
+            "starterVolume":0.76,
+            "starterVolumeExhaust":0.76,
+            "shutOffVolumeEngine":0.76,
+            "shutOffVolumeExhaust":0.76,
+            "starterThrottleKillTime":0.5,
+            "idleRPMStartRate":1,
+            "idleRPMStartCoef":1,
+    
+            //damage deformGroups
+            "deformGroups":["mainEngine", "mainEngine_piping", "mainEngine_accessories"]
+            "deformGroups_oilPan":["oilpan_damage"]
+        },
+        "soundConfig": {
+            "sampleName": "I4_2_engine_cabin",
+            "intakeMuffling": 0.7,
+    
+            "mainGain": -7,
+            "onLoadGain":1,
+            "offLoadGain":0.45,
+    
+            "maxLoadMix": 0.65,
+            "minLoadMix": 0,
+    
+            "lowShelfGain":-5,
+            "lowShelfFreq":80,
+    
+            "highShelfGain":-4,
+            "highShelfFreq":2500,
+    
+            "eqLowGain": -6,
+            "eqLowFreq": 500,
+            "eqLowWidth": 0.1,
+    
+            "eqHighGain": 0,
+            "eqHighFreq": 2500,
+            "eqHighWidth": 0.2,
+    
+            "fundamentalFrequencyCylinderCount":4,
+            "eqFundamentalGain": -4,
+        },
+        "soundConfigExhaust": {
+            "sampleName": "I4_2_exhaust",
+    
+            "mainGain": 1,
+            "onLoadGain":1,
+            "offLoadGain":0.10,
+    
+            "maxLoadMix": 0.6,
+            "minLoadMix": 0,
+    
+            "lowShelfGain":-8,
+            "lowShelfFreq":70,
+    
+            "highShelfGain":0,
+            "highShelfFreq":2000,
+    
+            "eqLowGain": -1,
+            "eqLowFreq": 90,
+            "eqLowWidth": 0.5,
+    
+            "eqHighGain": 0,
+            "eqHighFreq": 4000,
+            "eqHighWidth": 0.1,
+    
+            "fundamentalFrequencyCylinderCount":4,
+            "eqFundamentalGain": -7,
+        },
+        "vehicleController": {
+            "clutchLaunchStartRPM":1700,
+            //overwritten by stage 3 turbo
+            "clutchLaunchTargetRPM":3900,
+            //**highShiftDown can be overwritten by automatic transmissions**
+            "highShiftDownRPM":[0,0,0,2700,3350,3600,3800,3800],
+            //**highShiftUp can be overwritten by intake modifications**
+            "highShiftUpRPM":6800,
+        },
+        "flexbodies": [
+             ["mesh", "[group]:", "nonFlexMaterials"],
+             ["covetbuggy_engine_i4", ["covetbuggy_engine_mid"]],
+             ["covetbuggy_head_dohc_i4", ["covetbuggy_engine_mid"]],
+             {"deformGroup":"radhose_damage_R", "deformMaterialBase":"covetbuggy_mechanical", "deformMaterialDamaged":"invis"},
+             ["covetbuggy_radhose_i4_R", ["covetbuggy_engine_mid","covetbuggy_body"]],
+             {"deformGroup":""},
+        ],
+        "nodes": [
+             ["id", "posX", "posY", "posZ"],
+             {"selfCollision":false},
+             {"collision":true},
+             //engine box
+             {"frictionCoef":0.5},
+             {"nodeMaterial":"|NM_METAL"},
+             {"group":"covetbuggy_engine_mid"},
+             {"engineGroup":"engine_block"},
+             {"nodeWeight":13},
+             {"chemEnergy":500,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.12},
+             ["cb_e1r", -0.12000, 2.05058, 0.27992,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+             ["cb_e1l", 0.12000, 2.05058, 0.27992,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+             ["cb_e2r", -0.12000, 2.52758, 0.27992,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+             ["cb_e2l", 0.12000, 2.52758, 0.27992,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+             {"engineGroup":["engine_block","intake_i4"]},
+             {"selfCollision":true},
+             ["cb_e3r", -0.18000, 2.05058, 0.74892, {"isExhaust":"mainEngine"}],
+             ["cb_e3l", 0.18000, 2.05058, 0.74892],
+             ["cb_e4r", -0.18000, 2.52758, 0.74892],
+             ["cb_e4l", 0.18000, 2.52758, 0.74892],
+             {"chemEnergy":false,"burnRate":false,"flashPoint":false, "specHeat": false,"selfIgnitionCoef":false,"smokePoint":false,"baseTemp":false,"conductionRadius":false},
+             {"engineGroup":""},
+             {"group":""},
+        ],
+        "beams": [
+              ["id1:", "id2:"],
+              {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+              {"beamSpring":11200800,"beamDamp":258},
+              {"beamDeform":1120000,"beamStrength":"FLT_MAX"},
+              //engine
+              {"deformLimitExpansion":1.2},
+              {"deformGroup":"mainEngine", "deformationTriggerRatio":0.001}
+              ["cb_e1r","cb_e1l"],
+              ["cb_e2r","cb_e2l"],
+              ["cb_e3r","cb_e3l"],
+              ["cb_e4r","cb_e4l"],
+              ["cb_e1r","cb_e2r"],
+              ["cb_e1l","cb_e2l"],
+              ["cb_e3r","cb_e4r"],
+              ["cb_e3l","cb_e4l"],
+              ["cb_e1r","cb_e3r"],
+              ["cb_e1l","cb_e3l"],
+              ["cb_e2r","cb_e4r"],
+              ["cb_e2l","cb_e4l"],
+              ["cb_e2r","cb_e3r"],
+              ["cb_e2l","cb_e3l"],
+              ["cb_e2r","cb_e3l"],
+              ["cb_e2l","cb_e3r"],
+              ["cb_e1r","cb_e4r"],
+              ["cb_e1l","cb_e4l"],
+              ["cb_e1r","cb_e4l"],
+              ["cb_e1l","cb_e4r"],
+              ["cb_e1r","cb_e2l"],
+              ["cb_e1l","cb_e2r"],
+              ["cb_e3r","cb_e4l"],
+              ["cb_e3l","cb_e4r"],
+              ["cb_e1r","cb_e3l"],
+              ["cb_e1l","cb_e3r"],
+              ["cb_e2r","cb_e4l"],
+              ["cb_e2l","cb_e4r"],
+              {"deformGroup":""}
+    
+              //engine mount nodes
+              {"beamSpring":2956300,"beamDamp":130.43},
+              {"beamDeform":63000,"beamStrength":"FLT_MAX"},
+              ["cb_r5rr","cb_e3l"],
+              ["cb_r5rr","cb_e3r"],
+              ["cb_r4rr","cb_e4l"],
+              ["cb_r4rr","cb_e4r"],
+              ["cb_r1rr", "cb_e1r"],
+              ["cb_r1rr", "cb_e1l"],
+              ["cb_r2rr", "cb_e2l"],
+              ["cb_r2rr", "cb_e2r"],
+    
+              ["cb_r5ll","cb_e3l"],
+              ["cb_r5ll","cb_e3r"],
+              ["cb_r4ll","cb_e4l"],
+              ["cb_r4ll","cb_e4r"],
+              ["cb_r1ll", "cb_e1r"],
+              ["cb_r1ll", "cb_e1l"],
+              ["cb_r2ll", "cb_e2l"],
+              ["cb_r2ll", "cb_e2r"],
+    
+              //radhose
+              {"beamSpring":15000,"beamDamp":300},
+              {"beamDeform":1450,"beamStrength":3600},
+              {"deformGroup":"radhose_damage_R","deformationTriggerRatio":0.1},
+              {"optional":true}
+              ["cb_em1l","cb_e3l"],
+              ["cb_em1l","cb_e3r"],
+              ["cb_em1l","cb_e4l"],
+              ["cb_em1l","cb_e4r"],
+              ["cb_em1l", "cb_e1r"],
+              ["cb_em1l", "cb_e1l"],
+              ["cb_em1l", "cb_e2l"],
+              ["cb_em1l", "cb_e2r"],
+    
+              ["cb_e1r", "cb_f3r"],
+              ["cb_e3r", "cb_f3r"],
+              ["cb_e1r", "cb_f3l"],
+              ["cb_e1l", "cb_f3l"],
+              ["cb_e1l", "cb_f3r"],
+              ["cb_e1l", "cb_f9l"],
+              ["cb_e1r", "cb_f9r"],
+              ["cb_e3l", "cb_f3l"],
+              {"optional":false}
+              {"deformGroup":""},
+    
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        ],
+        "triangles": [
+                ["id1:","id2:","id3:"],
+                {"groundModel":"plastic"},
+                {"group":"covetbuggy_engine_mid"},
+                {"dragCoef":0.5},
+                ["cb_e2r", "cb_e1r", "cb_e4r"],
+                ["cb_e1r", "cb_e3r", "cb_e4r"],
+    
+                ["cb_e2l", "cb_e4l", "cb_e1l"],
+                ["cb_e1l", "cb_e4l", "cb_e3l"],
+    
+                ["cb_e4l", "cb_e2l", "cb_e2r"],
+                ["cb_e2r", "cb_e4r", "cb_e4l"],
+                ["cb_e3l", "cb_e1r", "cb_e1l"],
+                ["cb_e1r", "cb_e3l", "cb_e3r"],
+    
+                ["cb_e4r", "cb_e3r", "cb_e3l"],
+                ["cb_e3l", "cb_e4l", "cb_e4r"],
+                {"optional":true},
+                ["cb_e2l", "oilpan", "cb_e2r"],
+                ["cb_e1r", "oilpan", "cb_e1l"],
+                ["cb_e1l", "oilpan", "cb_e2l"],
+                ["cb_e2r", "oilpan", "cb_e1r"],
+                {"group":""},
+        ],
+    },
+    "covetbuggy_engine_1.8_i4": {
+        "information":{
+            "authors":"niTniT",
+            "name":"1.8L SOHC I4 Buggy Engine",
+            "value":2300,
+        },
+        "slotType" : "covetbuggy_engine",
+        "slots": [
+            ["type", "default", "description"],
+            //["covetbuggy_enginemounts_i4","covetbuggy_enginemounts_i4", "Engine Mounts"],
+            ["covetbuggy_intake_i4","covetbuggy_turbo_i4_stage1", "Intake", {"coreSlot":true}],
+            ["covetbuggy_engine_ecu","covetbuggy_engine_ecu", "Engine Management", {"coreSlot":true}],
+            ["covetbuggy_oilpan_i4","covetbuggy_oilpan_i4", "Oil Pan", {"coreSlot":true}],
+            ["cb_n2o_system","", "Nitrous Oxide System"],
+            ["covetbuggy_engine_internals","covetbuggy_engine_internals_heavy", "Engine Long Block", {"coreSlot":true}],
+            ["covetbuggy_exhaust_i4","covetbuggy_exhaust_i4", "Exhaust"],
+            ["covetbuggy_transaxle_i4","covetbuggy_transaxle_i4_5M", "Transaxle"],
+            ["covetbuggy_radiator_i4", "covetbuggy_radiator_i4", "Radiator"],
+            ["covetbuggy_oilcooler", "", "Oilcooler"],
+        ],
+        "powertrain": [
+            ["type", "name", "inputName", "inputIndex"],
+            ["combustionEngine", "mainEngine", "dummy", 0],
+        ],
+        "mainEngine":{
+            "torque":[
+                ["rpm", "torque"],
+                [0,      0],
+                [500,  62],
+                [1000, 107],
+                [2000, 146],
+                [3000, 177],
+                [4000, 193],
+                [5000, 197],
+                [6300, 179],
+                [7000, 158],
+                [8000, 108],
+                [9000, 40],
+                [9500, 20],
+            ],
+            "idleRPM":800,
+            //max rpm physically capable of
+            "maxRPM":6500,
+            "inertia":0.08,
+            "friction":14,
+            "dynamicFriction":0.019,
+            "engineBrakeTorque":29,
+            //"burnEfficiency":0.35
+            "burnEfficiency":[
+                [0, 0.12],
+                [0.05, 0.32],
+                [0.4, 0.44],
+                [0.7, 0.50],
+                [1, 0.34],
+            ],
+            //fuel system
+            "energyStorage": ["mainTank","fueltank_R", "fueltank_L"],
+            "requiredEnergyType":"gasoline",
+    
+            //exhaust
+            "instantAfterFireSound": "event:>Vehicle>Afterfire>i4_01>single",
+            "sustainedAfterFireSound": "event:>Vehicle>Afterfire>i4_01>multi",
+            "shiftAfterFireSound": "event:>Vehicle>Afterfire>i4_01>shift",
+            "particulates":0.02,
+            "instantAfterFireCoef": 0.5,
+            "sustainedAfterFireCoef": 0.5,
+            "instantAfterFireVolumeCoef": 0.8,
+            "sustainedAfterFireVolumeCoef": 0.4,
+            "shiftAfterFireVolumeCoef": 0.7,
+    
+            //cooling and oil system
+            "thermalsEnabled":true,
+            "engineBlockMaterial":"aluminum",
+            "oilVolume":4,
+            "engineBlockAirCoolingEfficiency":25,
+    
+            //engine durability
+            "cylinderWallTemperatureDamageThreshold":120,
+            "headGasketDamageThreshold":1500000,
+            "pistonRingDamageThreshold":1500000,
+            "connectingRodDamageThreshold":2000000,
+            "maxTorqueRating": 285,
+            "maxOverTorqueDamage": 250,
+    
+            //node beam interface
+            "torqueReactionNodes:":["cb_e1l","cb_e2l","cb_e4r"],
+            "waterDamage": {"[engineGroup]:":["intake_i4"]},
+            "radiator": {"[engineGroup]:":["radiator"]},
+            "engineBlock": {"[engineGroup]:":["engine_block"]},
+            "breakTriggerBeam":"engine",
+            "uiName":"Engine",
+            "soundConfig": "soundConfig",
+            "soundConfigExhaust": "soundConfigExhaust",
+    
+            //starter motor
+            "starterSample":"event:>Engine>Starter>i4_1996_eng",
+            "starterSampleExhaust":"event:>Engine>Starter>i4_1996_exh",
+            "shutOffSampleEngine":"event:>Engine>Shutoff>i4_1996_eng",
+            "shutOffSampleExhaust":"event:>Engine>Shutoff>i4_1996_exh",
+            "starterVolume":0.76,
+            "starterVolumeExhaust":0.76,
+            "shutOffVolumeEngine":0.76,
+            "shutOffVolumeExhaust":0.76,
+            "starterThrottleKillTime":0.65,
+            "idleRPMStartRate":2,
+            "idleRPMStartCoef":1,
+    
+            //damage deformGroups
+            "deformGroups":["mainEngine", "mainEngine_piping", "mainEngine_accessories"]
+            "deformGroups_oilPan":["oilpan_damage"]
+        },
+        "soundConfig": {
+            "sampleName": "I4_2_engine",
+            "intakeMuffling": 0.8,
+    
+            "mainGain": -7,
+            "onLoadGain":1,
+            "offLoadGain":0.45,
+    
+            "maxLoadMix": 0.6,
+            "minLoadMix": 0,
+    
+            "lowShelfGain":-5,
+            "lowShelfFreq":80,
+    
+            "highShelfGain":-4,
+            "highShelfFreq":2500,
+    
+            "eqLowGain": -6,
+            "eqLowFreq": 500,
+            "eqLowWidth": 0.1,
+    
+            "eqHighGain": 0,
+            "eqHighFreq": 2500,
+            "eqHighWidth": 0.2,
+    
+            "fundamentalFrequencyCylinderCount":4,
+            "eqFundamentalGain": -2,
+        },
+        "soundConfigExhaust": {
+            "sampleName": "I4_2_exhaust",
+    
+            "mainGain": 2,
+            "onLoadGain":1,
+            "offLoadGain":0.36,
+    
+            "maxLoadMix": 0.5,
+            "minLoadMix": 0,
+    
+            "lowShelfGain":-8,
+            "lowShelfFreq":60,
+    
+            "highShelfGain":0,
+            "highShelfFreq":2000,
+    
+            "eqLowGain": -1,
+            "eqLowFreq": 90,
+            "eqLowWidth": 0.5,
+    
+            "eqHighGain": 0,
+            "eqHighFreq": 4000,
+            "eqHighWidth": 0.1,
+    
+            "fundamentalFrequencyCylinderCount":4,
+            "eqFundamentalGain": -5,
+        },
+        "vehicleController": {
+            "clutchLaunchStartRPM":1600,
+            "clutchLaunchTargetRPM":2200,
+            //**highShiftDown can be overwritten by automatic transmissions**
+            "highShiftDownRPM":[0,0,0,2600,3300,3600,3800,3800],
+            //**highShiftUp can be overwritten by intake modifications**
+            "highShiftUpRPM":6300,
+        },
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            ["covetbuggy_engine_i4", ["covetbuggy_engine_mid"]],
+            ["covetbuggy_head_sohc_i4", ["covetbuggy_engine_mid"]],
+            {"deformGroup":"radhose_damage_R", "deformMaterialBase":"covetbuggy_mechanical", "deformMaterialDamaged":"invis"},
+            ["covetbuggy_radhose_i4_R", ["covetbuggy_engine_mid","covetbuggy_body"]],
+            {"deformGroup":""},
+       ],
+       "nodes": [
+            ["id", "posX", "posY", "posZ"],
+            {"selfCollision":false},
+            {"collision":true},
+            //engine box
+            {"frictionCoef":0.5},
+            {"nodeMaterial":"|NM_METAL"},
+            {"group":"covetbuggy_engine_mid"},
+            {"engineGroup":"engine_block"},
+            {"nodeWeight":13},
+            {"chemEnergy":500,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.12},
+            ["cb_e1r", -0.12000, 2.05058, 0.27992,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+            ["cb_e1l", 0.12000, 2.05058, 0.27992,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+            ["cb_e2r", -0.12000, 2.52758, 0.27992,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+            ["cb_e2l", 0.12000, 2.52758, 0.27992,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+            {"engineGroup":["engine_block","intake_i4"]},
+            {"selfCollision":true},
+            ["cb_e3r", -0.18000, 2.05058, 0.74892, {"isExhaust":"mainEngine"}],
+            ["cb_e3l", 0.18000, 2.05058, 0.74892],
+            ["cb_e4r", -0.18000, 2.52758, 0.74892],
+            ["cb_e4l", 0.18000, 2.52758, 0.74892],
+            {"chemEnergy":false,"burnRate":false,"flashPoint":false, "specHeat": false,"selfIgnitionCoef":false,"smokePoint":false,"baseTemp":false,"conductionRadius":false},
+            {"engineGroup":""},
+            {"group":""},
+       ],
+       "beams": [
+             ["id1:", "id2:"],
+             {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+             {"beamSpring":11200800,"beamDamp":258},
+             {"beamDeform":1120000,"beamStrength":"FLT_MAX"},
+             //engine
+             {"deformLimitExpansion":1.2},
+             {"deformGroup":"mainEngine", "deformationTriggerRatio":0.001}
+             ["cb_e1r","cb_e1l"],
+             ["cb_e2r","cb_e2l"],
+             ["cb_e3r","cb_e3l"],
+             ["cb_e4r","cb_e4l"],
+             ["cb_e1r","cb_e2r"],
+             ["cb_e1l","cb_e2l"],
+             ["cb_e3r","cb_e4r"],
+             ["cb_e3l","cb_e4l"],
+             ["cb_e1r","cb_e3r"],
+             ["cb_e1l","cb_e3l"],
+             ["cb_e2r","cb_e4r"],
+             ["cb_e2l","cb_e4l"],
+             ["cb_e2r","cb_e3r"],
+             ["cb_e2l","cb_e3l"],
+             ["cb_e2r","cb_e3l"],
+             ["cb_e2l","cb_e3r"],
+             ["cb_e1r","cb_e4r"],
+             ["cb_e1l","cb_e4l"],
+             ["cb_e1r","cb_e4l"],
+             ["cb_e1l","cb_e4r"],
+             ["cb_e1r","cb_e2l"],
+             ["cb_e1l","cb_e2r"],
+             ["cb_e3r","cb_e4l"],
+             ["cb_e3l","cb_e4r"],
+             ["cb_e1r","cb_e3l"],
+             ["cb_e1l","cb_e3r"],
+             ["cb_e2r","cb_e4l"],
+             ["cb_e2l","cb_e4r"],
+             {"deformGroup":""}
+   
+             //engine mount nodes
+             {"beamSpring":2956300,"beamDamp":130.43},
+             {"beamDeform":63000,"beamStrength":"FLT_MAX"},
+             ["cb_r5rr","cb_e3l"],
+             ["cb_r5rr","cb_e3r"],
+             ["cb_r4rr","cb_e4l"],
+             ["cb_r4rr","cb_e4r"],
+             ["cb_r1rr", "cb_e1r"],
+             ["cb_r1rr", "cb_e1l"],
+             ["cb_r2rr", "cb_e2l"],
+             ["cb_r2rr", "cb_e2r"],
+   
+             ["cb_r5ll","cb_e3l"],
+             ["cb_r5ll","cb_e3r"],
+             ["cb_r4ll","cb_e4l"],
+             ["cb_r4ll","cb_e4r"],
+             ["cb_r1ll", "cb_e1r"],
+             ["cb_r1ll", "cb_e1l"],
+             ["cb_r2ll", "cb_e2l"],
+             ["cb_r2ll", "cb_e2r"],
+   
+             //radhose
+             {"beamSpring":15000,"beamDamp":300},
+             {"beamDeform":1450,"beamStrength":3600},
+             {"deformGroup":"radhose_damage_R","deformationTriggerRatio":0.1},
+             {"optional":true}
+             ["cb_em1l","cb_e3l"],
+             ["cb_em1l","cb_e3r"],
+             ["cb_em1l","cb_e4l"],
+             ["cb_em1l","cb_e4r"],
+             ["cb_em1l", "cb_e1r"],
+             ["cb_em1l", "cb_e1l"],
+             ["cb_em1l", "cb_e2l"],
+             ["cb_em1l", "cb_e2r"],
+   
+             ["cb_e1r", "cb_f3r"],
+             ["cb_e3r", "cb_f3r"],
+             ["cb_e1r", "cb_f3l"],
+             ["cb_e1l", "cb_f3l"],
+             ["cb_e1l", "cb_f3r"],
+             ["cb_e1l", "cb_f9l"],
+             ["cb_e1r", "cb_f9r"],
+             ["cb_e3l", "cb_f3l"],
+             {"optional":false}
+             {"deformGroup":""},
+   
+             {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+       ],
+       "triangles": [
+               ["id1:","id2:","id3:"],
+               {"groundModel":"plastic"},
+               {"group":"covetbuggy_engine_mid"},
+               {"dragCoef":0.5},
+               ["cb_e2r", "cb_e1r", "cb_e4r"],
+               ["cb_e1r", "cb_e3r", "cb_e4r"],
+   
+               ["cb_e2l", "cb_e4l", "cb_e1l"],
+               ["cb_e1l", "cb_e4l", "cb_e3l"],
+   
+               ["cb_e4l", "cb_e2l", "cb_e2r"],
+               ["cb_e2r", "cb_e4r", "cb_e4l"],
+               ["cb_e3l", "cb_e1r", "cb_e1l"],
+               ["cb_e1r", "cb_e3l", "cb_e3r"],
+   
+               ["cb_e4r", "cb_e3r", "cb_e3l"],
+               ["cb_e3l", "cb_e4l", "cb_e4r"],
+               {"optional":true},
+               ["cb_e2l", "oilpan", "cb_e2r"],
+               ["cb_e1r", "oilpan", "cb_e1l"],
+               ["cb_e1l", "oilpan", "cb_e2l"],
+               ["cb_e2r", "oilpan", "cb_e1r"],
+               {"group":""},
+       ],
+    },
+    "covetbuggy_engine_2.0_i4": {
+        "information":{
+            "authors":"niTniT",
+            "name":"2.0L DOHC I4 Buggy Engine",
+            "value":4150,
+        },
+    
+        "slotType" : "covetbuggy_engine",
+        "slots": [
+            ["type", "default", "description"],
+            //["covetbuggy_enginemounts_i4","covetbuggy_enginemounts_i4", "Engine Mounts"],
+            ["covetbuggy_intake_i4","covetbuggy_turbo_i4_stage1", "Intake", {"coreSlot":true}],
+            ["covetbuggy_engine_ecu","covetbuggy_engine_ecu", "Engine Management", {"coreSlot":true}],
+            ["covetbuggy_oilpan_i4","covetbuggy_oilpan_i4", "Oil Pan", {"coreSlot":true}],
+            ["cb_n2o_system","", "Nitrous Oxide System"],
+            ["covetbuggy_engine_internals","covetbuggy_engine_internals_heavy", "Engine Long Block", {"coreSlot":true}],
+            ["covetbuggy_exhaust_i4","covetbuggy_exhaust_i4", "Exhaust"],
+            ["covetbuggy_transaxle_i4","covetbuggy_transaxle_i4_5M", "Transaxle"],
+            ["covetbuggy_radiator_i4", "covetbuggy_radiator_i4", "Radiator"],
+            ["covetbuggy_oilcooler", "", "Oilcooler"],
+        ],
+        "powertrain": [
+            ["type", "name", "inputName", "inputIndex"],
+            ["combustionEngine", "mainEngine", "dummy", 0],
+        ],
+        "mainEngine": {
+            "torque":[
+                ["rpm", "torque"],
+                [0,      0],
+                [500,  70],
+                [1000, 118],
+                [2000, 172],
+                [3000, 193.5],
+                [4000, 206],
+                [5000, 206],
+                [6000, 202],
+                [6500, 194],
+                [7000, 185],
+                [8000, 143],
+                [9000, 90],
+                [9500, 60],
+                [10000, 58],
+                [10500, 55],
+                [11000, 50],
+            ],
+            "idleRPM":700,
+            "maxRPM":7000,
+            "inertia":0.09,
+            "friction":10,
+            "dynamicFriction":0.0235,
+            "engineBrakeTorque":30,
+            //"burnEfficiency":0.34
+            "burnEfficiency":[
+                [0, 0.12],
+                [0.05, 0.32],
+                [0.4, 0.44],
+                [0.7, 0.50],
+                [1, 0.34],
+            ],
+            //fuel system
+            "energyStorage": ["mainTank","fueltank_R", "fueltank_L"],
+            "requiredEnergyType":"gasoline",
+    
+            //exhaust
+            "instantAfterFireSound": "event:>Vehicle>Afterfire>i4_01>single",
+            "sustainedAfterFireSound": "event:>Vehicle>Afterfire>i4_01>multi",
+            "shiftAfterFireSound": "event:>Vehicle>Afterfire>i4_01>shift",
+            "particulates":0.02,
+            "instantAfterFireCoef": 0.75,
+            "sustainedAfterFireCoef": 0.75,
+            "instantAfterFireVolumeCoef": 1.0,
+            "sustainedAfterFireVolumeCoef": 0.6,
+            "shiftAfterFireVolumeCoef": 0.9,
+    
+            //cooling and oil system
+            "thermalsEnabled":true,
+            "engineBlockMaterial":"aluminum",
+            "oilVolume":4,
+            "engineBlockAirCoolingEfficiency":25,
+    
+            //engine durability
+            "cylinderWallTemperatureDamageThreshold":120,
+            "headGasketDamageThreshold":1500000,
+            "pistonRingDamageThreshold":1500000,
+            "connectingRodDamageThreshold":2000000,
+            "maxTorqueRating": 285,
+            "maxOverTorqueDamage": 340,
+    
+            //node beam interface
+            "torqueReactionNodes:":["cb_e1l","cb_e2l","cb_e4r"],
+            "waterDamage": {"[engineGroup]:":["intake_i4"]},
+            "radiator": {"[engineGroup]:":["radiator"]},
+            "engineBlock": {"[engineGroup]:":["engine_block"]},
+            "breakTriggerBeam":"engine",
+            "uiName":"Engine",
+            "soundConfig": "soundConfig",
+            "soundConfigExhaust": "soundConfigExhaust",
+    
+            //starter motor
+            "starterSample":"event:>Engine>Starter>i4_1996_eng",
+            "starterSampleExhaust":"event:>Engine>Starter>i4_1996_exh",
+            "shutOffSampleEngine":"event:>Engine>Shutoff>i4_1996_eng",
+            "shutOffSampleExhaust":"event:>Engine>Shutoff>i4_1996_exh",
+            "starterVolume":0.76,
+            "starterVolumeExhaust":0.76,
+            "shutOffVolumeEngine":0.76,
+            "shutOffVolumeExhaust":0.76,
+            "starterThrottleKillTime":0.65,
+            "idleRPMStartRate":2,
+            "idleRPMStartCoef":1,
+    
+            //damage deformGroups
+            "deformGroups":["mainEngine", "mainEngine_piping", "mainEngine_accessories"]
+            "deformGroups_oilPan":["oilpan_damage"]
+        },
+        "soundConfig": {
+            "sampleName": "I4_2_engine",
+            "intakeMuffling": 0.65,
+    
+            "mainGain": -6.5,
+            "onLoadGain":1,
+            "offLoadGain":0.38,
+    
+            "maxLoadMix": 0.7,
+            "minLoadMix": 0,
+    
+            "lowShelfGain":-4,
+            "lowShelfFreq":80,
+    
+            "highShelfGain":-3,
+            "highShelfFreq":2500,
+    
+            "eqLowGain": -6,
+            "eqLowFreq": 500,
+            "eqLowWidth": 0.1,
+    
+            "eqHighGain": -3,
+            "eqHighFreq": 1500,
+            "eqHighWidth": 0.2,
+    
+            "fundamentalFrequencyCylinderCount":4,
+            "eqFundamentalGain": -2.5,
+        },
+        "soundConfigExhaust": {
+            "sampleName": "I4_2_exhaust",
+    
+            "mainGain": 2.5,
+            "onLoadGain":1,
+            "offLoadGain":0.39,
+    
+            "maxLoadMix": 0.6,
+            "minLoadMix": 0,
+    
+            "lowShelfGain":-7,
+            "lowShelfFreq":60,
+    
+            "highShelfGain":0,
+            "highShelfFreq":2500,
+    
+            "eqLowGain": -1,
+            "eqLowFreq": 90,
+            "eqLowWidth": 0.5,
+    
+            "eqHighGain": 0,
+            "eqHighFreq": 4000,
+            "eqHighWidth": 0.1,
+    
+            "fundamentalFrequencyCylinderCount":4,
+            "eqFundamentalGain": -4,
+        },
+        "vehicleController": {
+            "clutchLaunchStartRPM":1600,
+            "clutchLaunchTargetRPM":2200,
+            //**highShiftDown can be overwritten by automatic transmissions**
+            "highShiftDownRPM":[0,0,0,2800,3300,3600,3800,3800],
+            //**highShiftUp can be overwritten by intake modifications**
+            "highShiftUpRPM":7000,
+        },
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            ["covetbuggy_engine_i4", ["covetbuggy_engine_mid"]],
+            ["covetbuggy_head_dohc_i4", ["covetbuggy_engine_mid"]],
+            {"deformGroup":"radhose_damage_R", "deformMaterialBase":"covetbuggy_mechanical", "deformMaterialDamaged":"invis"},
+            ["covetbuggy_radhose_i4_R", ["covetbuggy_engine_mid","covetbuggy_body"]],
+            {"deformGroup":""},
+       ],
+       "nodes": [
+            ["id", "posX", "posY", "posZ"],
+            {"selfCollision":false},
+            {"collision":true},
+            //engine box
+            {"frictionCoef":0.5},
+            {"nodeMaterial":"|NM_METAL"},
+            {"group":"covetbuggy_engine_mid"},
+            {"engineGroup":"engine_block"},
+            {"nodeWeight":13},
+            {"chemEnergy":500,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.12},
+            ["cb_e1r", -0.12000, 2.05058, 0.27992,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+            ["cb_e1l", 0.12000, 2.05058, 0.27992,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+            ["cb_e2r", -0.12000, 2.52758, 0.27992,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+            ["cb_e2l", 0.12000, 2.52758, 0.27992,{"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.1,"selfIgnitionCoef":false,"smokePoint":650,"baseTemp":"thermals","conductionRadius":0.07}],
+            {"engineGroup":["engine_block","intake_i4"]},
+            {"selfCollision":true},
+            ["cb_e3r", -0.18000, 2.05058, 0.74892, {"isExhaust":"mainEngine"}],
+            ["cb_e3l", 0.18000, 2.05058, 0.74892],
+            ["cb_e4r", -0.18000, 2.52758, 0.74892],
+            ["cb_e4l", 0.18000, 2.52758, 0.74892],
+            {"chemEnergy":false,"burnRate":false,"flashPoint":false, "specHeat": false,"selfIgnitionCoef":false,"smokePoint":false,"baseTemp":false,"conductionRadius":false},
+            {"engineGroup":""},
+            {"group":""},
+       ],
+       "beams": [
+             ["id1:", "id2:"],
+             {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+             {"beamSpring":11200800,"beamDamp":258},
+             {"beamDeform":1120000,"beamStrength":"FLT_MAX"},
+             //engine
+             {"deformLimitExpansion":1.2},
+             {"deformGroup":"mainEngine", "deformationTriggerRatio":0.001}
+             ["cb_e1r","cb_e1l"],
+             ["cb_e2r","cb_e2l"],
+             ["cb_e3r","cb_e3l"],
+             ["cb_e4r","cb_e4l"],
+             ["cb_e1r","cb_e2r"],
+             ["cb_e1l","cb_e2l"],
+             ["cb_e3r","cb_e4r"],
+             ["cb_e3l","cb_e4l"],
+             ["cb_e1r","cb_e3r"],
+             ["cb_e1l","cb_e3l"],
+             ["cb_e2r","cb_e4r"],
+             ["cb_e2l","cb_e4l"],
+             ["cb_e2r","cb_e3r"],
+             ["cb_e2l","cb_e3l"],
+             ["cb_e2r","cb_e3l"],
+             ["cb_e2l","cb_e3r"],
+             ["cb_e1r","cb_e4r"],
+             ["cb_e1l","cb_e4l"],
+             ["cb_e1r","cb_e4l"],
+             ["cb_e1l","cb_e4r"],
+             ["cb_e1r","cb_e2l"],
+             ["cb_e1l","cb_e2r"],
+             ["cb_e3r","cb_e4l"],
+             ["cb_e3l","cb_e4r"],
+             ["cb_e1r","cb_e3l"],
+             ["cb_e1l","cb_e3r"],
+             ["cb_e2r","cb_e4l"],
+             ["cb_e2l","cb_e4r"],
+             {"deformGroup":""}
+   
+             //engine mount nodes
+             {"beamSpring":2956300,"beamDamp":130.43},
+             {"beamDeform":63000,"beamStrength":"FLT_MAX"},
+             ["cb_r5rr","cb_e3l"],
+             ["cb_r5rr","cb_e3r"],
+             ["cb_r4rr","cb_e4l"],
+             ["cb_r4rr","cb_e4r"],
+             ["cb_r1rr", "cb_e1r"],
+             ["cb_r1rr", "cb_e1l"],
+             ["cb_r2rr", "cb_e2l"],
+             ["cb_r2rr", "cb_e2r"],
+   
+             ["cb_r5ll","cb_e3l"],
+             ["cb_r5ll","cb_e3r"],
+             ["cb_r4ll","cb_e4l"],
+             ["cb_r4ll","cb_e4r"],
+             ["cb_r1ll", "cb_e1r"],
+             ["cb_r1ll", "cb_e1l"],
+             ["cb_r2ll", "cb_e2l"],
+             ["cb_r2ll", "cb_e2r"],
+   
+             //radhose
+             {"beamSpring":15000,"beamDamp":300},
+             {"beamDeform":1450,"beamStrength":3600},
+             {"deformGroup":"radhose_damage_R","deformationTriggerRatio":0.1},
+             {"optional":true}
+             ["cb_em1l","cb_e3l"],
+             ["cb_em1l","cb_e3r"],
+             ["cb_em1l","cb_e4l"],
+             ["cb_em1l","cb_e4r"],
+             ["cb_em1l", "cb_e1r"],
+             ["cb_em1l", "cb_e1l"],
+             ["cb_em1l", "cb_e2l"],
+             ["cb_em1l", "cb_e2r"],
+   
+             ["cb_e1r", "cb_f3r"],
+             ["cb_e3r", "cb_f3r"],
+             ["cb_e1r", "cb_f3l"],
+             ["cb_e1l", "cb_f3l"],
+             ["cb_e1l", "cb_f3r"],
+             ["cb_e1l", "cb_f9l"],
+             ["cb_e1r", "cb_f9r"],
+             ["cb_e3l", "cb_f3l"],
+             {"optional":false}
+             {"deformGroup":""},
+   
+             {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+       ],
+       "triangles": [
+               ["id1:","id2:","id3:"],
+               {"groundModel":"plastic"},
+               {"group":"covetbuggy_engine_mid"},
+               {"dragCoef":0.5},
+               ["cb_e2r", "cb_e1r", "cb_e4r"],
+               ["cb_e1r", "cb_e3r", "cb_e4r"],
+   
+               ["cb_e2l", "cb_e4l", "cb_e1l"],
+               ["cb_e1l", "cb_e4l", "cb_e3l"],
+   
+               ["cb_e4l", "cb_e2l", "cb_e2r"],
+               ["cb_e2r", "cb_e4r", "cb_e4l"],
+               ["cb_e3l", "cb_e1r", "cb_e1l"],
+               ["cb_e1r", "cb_e3l", "cb_e3r"],
+   
+               ["cb_e4r", "cb_e3r", "cb_e3l"],
+               ["cb_e3l", "cb_e4l", "cb_e4r"],
+               {"optional":true},
+               ["cb_e2l", "oilpan", "cb_e2r"],
+               ["cb_e1r", "oilpan", "cb_e1l"],
+               ["cb_e1l", "oilpan", "cb_e2l"],
+               ["cb_e2r", "oilpan", "cb_e1r"],
+               {"group":""},
+       ],
+    },
+    "covetbuggy_oilpan_i4": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Stock Oil Pan",
+            "value":90,
+        },
+        "slotType" : "covetbuggy_oilpan_i4",
+        "mainEngine": {
+            //engine durability
+            "oilpanMaximumSafeG": 1.3
+    
+            //node beam interface
+            "oilpanNodes:":["oilpan","oilref"],
+    
+            //engine deform groups
+            "deformGroups_oilPan":["oilpan_damage"]
+        },
+        "nodes": [
+             ["id", "posX", "posY", "posZ"],
+             {"selfCollision":false},
+             {"collision":true},
+             {"frictionCoef":0.5},
+             {"nodeMaterial":"|NM_METAL"},
+    
+             //oil pan node
+             {"group":""},
+             {"nodeWeight":2},
+             ["oilpan", 0.00000, 2.29458, 0.22992],
+             ["oilref", 0.00000, 2.29458, 0.62992, {"nodeWeight":1, "collision":false}],
+        ],
+        "beams": [
+              ["id1:", "id2:"],
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    
+              //oilpan node
+              {"beamSpring":1501000,"beamDamp":250},
+              {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+              {"deformGroup":"oilpan_damage","deformationTriggerRatio":0.005},
+              ["oilpan", "cb_e1r"],
+              ["oilpan", "cb_e1l"],
+              ["oilpan", "cb_e2r"],
+              ["oilpan", "cb_e2l"],
+              ["oilpan", "cb_e3r"],
+              ["oilpan", "cb_e3l"],
+              ["oilpan", "cb_e4r"],
+              ["oilpan", "cb_e4l"],
+              {"deformGroup":""},
+    
+              //oil ref
+              {"beamSpring":1001000,"beamDamp":150},
+              {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+              ["oilref", "cb_e1r"],
+              ["oilref", "cb_e1l"],
+              ["oilref", "cb_e2r"],
+              ["oilref", "cb_e2l"],
+              ["oilref", "cb_e3r"],
+              ["oilref", "cb_e3l"],
+              ["oilref", "cb_e4r"],
+              ["oilref", "cb_e4l"],
+              {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        ],
+    },
+    "covetbuggy_oilpan_i4_race": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Race Oil Pan",
+            "value":250,
+        },
+        "slotType" : "covetbuggy_oilpan_i4",
+        "mainEngine": {
+    
+            //engine durability
+            "oilpanMaximumSafeG": 2.5
+    
+            //node beam interface
+            "oilpanNodes:":["oilpan","oilref"],
+    
+            //engine deform groups
+            "deformGroups_oilPan":["oilpan_damage"]
+        },
+        "nodes": [
+            ["id", "posX", "posY", "posZ"],
+            {"selfCollision":false},
+            {"collision":true},
+            {"frictionCoef":0.5},
+            {"nodeMaterial":"|NM_METAL"},
+   
+            //oil pan node
+            {"group":""},
+            {"nodeWeight":2},
+            ["oilpan", 0.00000, 2.29458, 0.22992],
+            ["oilref", 0.00000, 2.29458, 0.62992, {"nodeWeight":1, "collision":false}],
+       ],
+       "beams": [
+             ["id1:", "id2:"],
+             {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+   
+             //oilpan node
+             {"beamSpring":1501000,"beamDamp":250},
+             {"beamDeform":8000,"beamStrength":"FLT_MAX"},
+             {"deformGroup":"oilpan_damage","deformationTriggerRatio":0.005},
+             ["oilpan", "cb_e1r"],
+             ["oilpan", "cb_e1l"],
+             ["oilpan", "cb_e2r"],
+             ["oilpan", "cb_e2l"],
+             ["oilpan", "cb_e3r"],
+             ["oilpan", "cb_e3l"],
+             ["oilpan", "cb_e4r"],
+             ["oilpan", "cb_e4l"],
+             {"deformGroup":""},
+   
+             //oil ref
+             {"beamSpring":1001000,"beamDamp":150},
+             {"beamDeform":25000,"beamStrength":"FLT_MAX"},
+             ["oilref", "cb_e1r"],
+             ["oilref", "cb_e1l"],
+             ["oilref", "cb_e2r"],
+             ["oilref", "cb_e2l"],
+             ["oilref", "cb_e3r"],
+             ["oilref", "cb_e3l"],
+             ["oilref", "cb_e4r"],
+             ["oilref", "cb_e4l"],
+             {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+       ],
+    },
+    "covetbuggy_turbo_i4_stage1": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Stock Turbocharger",
+            "value":1950,
+        },
+        "slotType" : "covetbuggy_intake_i4",
+        "slots": [
+            ["type", "default", "description"],
+            ["covetbuggy_exhaust_trb","covetbuggy_exhaust_trbflap","Exhaust"],
+        ],
+        "turbocharger": {
+            "bovSoundFileName":"event:>Vehicle>Forced_Induction>Turbo_02_cabin>turbo_bov_tuned",
+            "hissLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_07_cabin>turbo_hiss_tuned",
+            "whineLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_05_cabin>turbo_spin_tuned",
+            "turboSizeCoef": 0.65,
+            "bovSoundVolumeCoef": 0.45,
+            "hissVolumePerPSI": 0.030,
+            "whineVolumePer10kRPM": 0.0070,
+            "whinePitchPer10kRPM": 0.03,
+            "wastegateStart":12.5,
+            "wastegateLimit":13.5,
+            "maxExhaustPower": 13000,
+            "backPressureCoef": 0.000035,
+            "frictionCoef": 10.4,
+            "inertia":1.4,
+            "damageThresholdTemperature": 610,
+            "pressurePSI":[
+                //turbineRPM, pressure(PSI)
+                [0,         -3.5],
+                [30000,     0],
+                [60000,     7],
+                [90000,     10],
+                [150000,    14],
+                [200000,    18],
+                [250000,    20],
+            ],
+            "engineDef":[
+                //engineRPM, efficiency, exhaustFactor
+                [0,     0.0,    0.0],
+                [650,   0.10,   0.08],
+                [1400,  0.12,   0.10],
+                [2000,  0.20,    0.20],
+                [2500,  0.40,    0.30],
+                [3000,  0.64,    0.55],
+                [3500,  0.84,    0.65],
+                [4000,  0.88,    0.90],
+                [5000,  0.94,    0.95],
+                [6000,  0.92,    0.94],
+                [7000,  0.90,    0.90],
+                [8000,  0.83,    1.0],
+                [9000,  0.75,    1.0],
+                [10000, 0.65,    1.0],
+                [11000, 0.55,    1.0],
+            ],
+        },
+        "mainEngine": {
+            //turbocharger name
+            "turbocharger":"turbocharger",
+            "$*instantAfterFireCoef": 1.8,
+            "$*sustainedAfterFireCoef": 1.25,
+    
+            //damage deformGroups
+            "deformGroups_turbo":["mainEngine_turbo_R","mainEngine_radiator_R"]
+        },
+        "soundConfig": {
+            "$+maxLoadMix": 0.1,
+            "$+intakeMuffling":-0.2,
+            "$+mainGain":1.5,
+            "$+eqLowGain": 1.5,
+        },
+        "soundConfigExhaust": {
+            "$+maxLoadMix": 0.1,
+            "$+minLoadMix": 0.01,
+            "$+mainGain": 0.5,
+            "$+offLoadGain": 0.00,
+            "$+eqLowGain": 0.25,
+            "$+eqFundamentalGain": 0.5,
+        },
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            ["covetbuggy_radiator_i4", ["covetbuggy_radiator_i4"]],
+            ["covetbuggy_podfilter_i4", ["covetbuggy_engine_mid","covetbuggy_intake_i4"]],
+            ["covetbuggy_header_turbo_i4", ["covetbuggy_engine_mid","covetbuggy_turbo"]],
+            ["covetbuggy_intake_i4", ["covetbuggy_engine_mid","covetbuggy_intake_i4"]],
+            {"deformGroup":"mainEngine_chargepipe_R", "deformMaterialBase":"covetbuggy_mechanical", "deformMaterialDamaged":"invis"},
+            ["covetbuggy_radiatorpipes", ["covetbuggy_radiator_i4","covetbuggy_intake_i4"]],
+            ["covetbuggy_radiatorpipes", ["covetbuggy_radiator_i4","covetbuggy_turbo"]],
+            ["covetbuggy_intakepipe_i4", ["covetbuggy_radiator_i4","covetbuggy_intake_i4"]],
+            {"deformGroup":""},
+            ],
+            "nodes": [
+                ["id", "posX", "posY", "posZ"],
+                {"selfCollision":false},
+                {"collision":false},
+                //intake
+                {"frictionCoef":0.5},
+                {"nodeMaterial":"|NM_METAL"},
+                {"nodeWeight":3.5},
+                {"group":["covetbuggy_engine_mid","covetbuggy_intake_i4"]},
+                ["cb_intck1l", -0.25000, 2.53450, 0.74896],
+                ["cb_intck2l", -0.25000, 2.05750, 0.74896],
+                {"engineGroup":""},
+       
+                //turbos
+                {"nodeWeight":2.0},
+                ["cb_trb1r", -0.18000, 1.89050, 0.55296, {"group":"covetbuggy_turbo"}],
+                ["cb_trb2r", -0.18000, 1.74050, 0.55296, {"group":"covetbuggy_turbo", "afterFireAudioCoef":1.0, "afterFireVisualCoef":1.0, "afterFireVolumeCoef":1.0, "afterFireMufflingCoef":1.0, "exhaustAudioMufflingCoef":1.0, "exhaustAudioGainChange":0}],
+       
+                //intercoolers
+                {"nodeWeight":3.0},
+                {"selfCollision":true},
+                {"collision":true},
+                ["cb_ic1l", -0.80900, 2.32850, 0.50896, {"group":"covetbuggy_radiator_i4"}],
+                {"group":""},
+           ],
+           "beams": [
+                 ["id1:", "id2:"],
+                 {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                 //intake
+                 {"deformLimitExpansion":1.2},
+                 {"beamSpring":3500940,"beamDamp":235},
+                 {"beamDeform":105000,"beamStrength":"FLT_MAX"},
+       
+                 ["cb_intck2l", "cb_intck1l"],
+                 ["cb_intck2l", "cb_e4r"],
+                 ["cb_e4r", "cb_intck1l"],
+                 ["cb_intck1l", "cb_e3r"],
+                 ["cb_intck2l", "cb_e3r"],
+                 ["cb_intck2l", "cb_e4l"],
+                 ["cb_e4l", "cb_intck1l"],
+                 ["cb_intck1l", "cb_e3l"],
+                 ["cb_e3l", "cb_intck2l"],
+                 ["cb_intck2l", "cb_e2l"],
+                 ["cb_e2l", "cb_intck1l"],
+                 ["cb_intck1l", "cb_e1l"],
+                 ["cb_e1l", "cb_intck2l"],
+                 ["cb_intck2l", "cb_e2r"],
+                 ["cb_e2r", "cb_intck1l"],
+                 ["cb_intck1l", "cb_e1r"],
+                 ["cb_e1r", "cb_intck2l"],
+       
+                 //turbo
+                 {"beamSpring":3000000,"beamDamp":130},
+                 {"beamDeform":90000,"beamStrength":"FLT_MAX"},
+                 {"deformGroup":"mainEngine_turbo_R", "deformationTriggerRatio":0.001}
+                 ["cb_trb1r", "cb_e3l"],
+                 ["cb_trb1r", "cb_e4l"],
+                 ["cb_trb1r", "cb_e3r", {"isExhaust":"mainEngine"}],
+                 ["cb_trb1r", "cb_e4r"],
+                 ["cb_trb1r", "cb_e1l"],
+                 ["cb_trb1r", "cb_e2l"],
+                 ["cb_trb1r", "cb_e1r"],
+                 ["cb_trb1r", "cb_e2r"],
+                 ["cb_trb2r", "cb_e3l"],
+                 ["cb_trb2r", "cb_e4l"],
+                 ["cb_trb2r", "cb_e3r"],
+                 ["cb_trb2r", "cb_e4r"],
+                 ["cb_trb2r", "cb_e1l"],
+                 ["cb_trb2r", "cb_e2l"],
+                 ["cb_trb2r", "cb_e1r"],
+                 ["cb_trb2r", "cb_e2r"],
+                 ["cb_trb2r", "cb_trb1r", {"isExhaust":"mainEngine"}]
+                 {"deformGroup":""}
+       
+                 //intercooler
+                 {"beamSpring":2000000,"beamDamp":130},
+                 {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+                 {"deformGroup":"mainEngine_radiator_R", "deformationTriggerRatio":0.02}
+                 ["cb_ic1l", "f3ll"],
+                 ["cb_ic1l", "f4ll"],
+                 ["cb_ic1l", "q5l"],
+                 ["cb_ic1l", "q6l"],
+                 ["cb_ic1l", "q1l"],
+                 ["cb_ic1l", "q2ll"],
+       
+                 ["cb_ic1l", "f8l"],
+                 ["cb_ic1l", "rx3l"],
+       
+                 //charge pipes
+                 {"beamSpring":50000,"beamDamp":130},
+                 {"beamDeform":10000,"beamStrength":20000},
+                 {"deformGroup":"mainEngine_chargepipe_R", "deformationTriggerRatio":0.02}
+                 ["cb_ic1l", "cb_trb1r"],
+                 ["cb_ic1l", "cb_intck1l"],
+                 ["cb_ic1l", "cb_intck2l"],
+                 {"deformGroup":""}
+                 {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+           ],
+    },
+    "covetbuggy_turbo_i4_stage2": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Evolution Turbocharger",
+            "value":4400,
+        },
+        "slotType" : "covetbuggy_intake_i4",
+        "slots": [
+            ["type", "default", "description"],
+            ["covetbuggy_exhaust_trb","covetbuggy_exhaust_trbflap","Exhaust"],
+        ],
+        "turbocharger": {
+            "bovSoundFileName":"event:>Vehicle>Forced_Induction>Turbo_05_cabin>turbo_bov_race",
+            "hissLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_05_cabin>turbo_hiss_race",
+            "whineLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_05_cabin>turbo_spin_tuned",
+            "turboSizeCoef": 0.75,
+            "bovSoundVolumeCoef": 0.45,
+            "hissVolumePerPSI": 0.030,
+            "whineVolumePer10kRPM": 0.0070,
+            "whinePitchPer10kRPM": 0.03,
+            "wastegateStart":17.3,
+            "wastegateLimit":18.3,
+            "maxExhaustPower": 25000,
+            "backPressureCoef": 0.000025,
+            "frictionCoef": 16,
+            "inertia":1.4,
+            "damageThresholdTemperature": 650,
+            "pressurePSI":[
+                //turbineRPM, pressure(PSI)
+                [0,         -3.5],
+                [30000,     -0.5],
+                [60000,     5],
+                [90000,     8.5],
+                [150000,    12],
+                [200000,    15.5],
+                [250000,    19],
+                [300000,    23],
+            ],
+            "engineDef":[
+                //engineRPM, efficiency, exhaustFactor
+                [0,     0.0,    0.0],
+                [650,   0.10,   0.08],
+                [1400,  0.12,   0.10],
+                [2000,  0.20,    0.20],
+                [2500,  0.40,    0.30],
+                [3000,  0.64,    0.55],
+                [3500,  0.84,    0.68],
+                [4000,  0.88,    0.93],
+                [5000,  0.92,    0.94],
+                [6000,  0.94,    0.95],
+                [7000,  0.92,    0.96],
+                [8000,  0.88,    1.0],
+                [9000,  0.75,    1.0],
+                [10000, 0.65,    1.0],
+                [11000, 0.55,    1.0],
+            ],
+        },
+        "mainEngine": {
+            //turbocharger name
+            "turbocharger":"turbocharger",
+            "$*instantAfterFireCoef": 2.0,
+            "$*sustainedAfterFireCoef": 1.5,
+    
+            //damage deformGroups
+            "deformGroups_turbo":["mainEngine_turbo_R","mainEngine_radiator_R"]
+        },
+        "soundConfig": {
+            "$+maxLoadMix": 0.1,
+            "$+intakeMuffling":-0.2,
+            "$+mainGain":1.5,
+            "$+eqLowGain": 1.5,
+        },
+        "soundConfigExhaust": {
+            "$+maxLoadMix": 0.1,
+            "$+minLoadMix": 0.01,
+            "$+mainGain": 0.5,
+            "$+offLoadGain": 0.00,
+            "$+eqLowGain": 0.25,
+            "$+eqFundamentalGain": 0.5,
+        },
+        "vehicleController": {
+            "revMatchThrottle":0.35,
+        },
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            ["covetbuggy_radiator_i4", ["covetbuggy_radiator_i4"]],
+            ["covetbuggy_podfilter_i4", ["covetbuggy_engine_mid","covetbuggy_intake_i4"]],,
+            ["covetbuggy_header_turbo_i4", ["covetbuggy_engine_mid","covetbuggy_turbo"]],
+            ["covetbuggy_intake_i4", ["covetbuggy_engine_mid","covetbuggy_intake_i4"]],
+            {"deformGroup":"mainEngine_chargepipe_R", "deformMaterialBase":"covetbuggy_mechanical", "deformMaterialDamaged":"invis"},
+            ["covetbuggy_radiatorpipes", ["covetbuggy_radiator_i4","covetbuggy_intake_i4"]],
+            ["covetbuggy_radiatorpipes", ["covetbuggy_radiator_i4","covetbuggy_turbo"]],
+            ["covetbuggy_intakepipe_i4", ["covetbuggy_radiator_i4","covetbuggy_intake_i4"]],
+            {"deformGroup":""},
+            ],
+            "nodes": [
+                ["id", "posX", "posY", "posZ"],
+                {"selfCollision":false},
+                {"collision":false},
+                //intake
+                {"frictionCoef":0.5},
+                {"nodeMaterial":"|NM_METAL"},
+                {"nodeWeight":3.5},
+                {"group":["covetbuggy_engine_mid","covetbuggy_intake_i4"]},
+                ["cb_intck1l", -0.25000, 2.53450, 0.74896],
+                ["cb_intck2l", -0.25000, 2.05750, 0.74896],
+                {"engineGroup":""},
+       
+                //turbos
+                {"nodeWeight":2.0},
+                ["cb_trb1r", -0.18000, 1.89050, 0.55296, {"group":"covetbuggy_turbo"}],
+                ["cb_trb2r", -0.18000, 1.74050, 0.55296, {"group":"covetbuggy_turbo", "afterFireAudioCoef":1.0, "afterFireVisualCoef":1.0, "afterFireVolumeCoef":1.0, "afterFireMufflingCoef":1.0, "exhaustAudioMufflingCoef":1.0, "exhaustAudioGainChange":0}],
+       
+                //intercoolers
+                {"nodeWeight":3.0},
+                {"selfCollision":true},
+                {"collision":true},
+                ["cb_ic1l", -0.80900, 2.32850, 0.50896, {"group":"covetbuggy_radiator_i4"}],
+                {"group":""},
+           ],
+           "beams": [
+                 ["id1:", "id2:"],
+                 {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                 //intake
+                 {"deformLimitExpansion":1.2},
+                 {"beamSpring":3500940,"beamDamp":235},
+                 {"beamDeform":105000,"beamStrength":"FLT_MAX"},
+       
+                 ["cb_intck2l", "cb_intck1l"],
+                 ["cb_intck2l", "cb_e4r"],
+                 ["cb_e4r", "cb_intck1l"],
+                 ["cb_intck1l", "cb_e3r"],
+                 ["cb_intck2l", "cb_e3r"],
+                 ["cb_intck2l", "cb_e4l"],
+                 ["cb_e4l", "cb_intck1l"],
+                 ["cb_intck1l", "cb_e3l"],
+                 ["cb_e3l", "cb_intck2l"],
+                 ["cb_intck2l", "cb_e2l"],
+                 ["cb_e2l", "cb_intck1l"],
+                 ["cb_intck1l", "cb_e1l"],
+                 ["cb_e1l", "cb_intck2l"],
+                 ["cb_intck2l", "cb_e2r"],
+                 ["cb_e2r", "cb_intck1l"],
+                 ["cb_intck1l", "cb_e1r"],
+                 ["cb_e1r", "cb_intck2l"],
+       
+                 //turbo
+                 {"beamSpring":3000000,"beamDamp":130},
+                 {"beamDeform":90000,"beamStrength":"FLT_MAX"},
+                 {"deformGroup":"mainEngine_turbo_R", "deformationTriggerRatio":0.001}
+                 ["cb_trb1r", "cb_e3l"],
+                 ["cb_trb1r", "cb_e4l"],
+                 ["cb_trb1r", "cb_e3r", {"isExhaust":"mainEngine"}],
+                 ["cb_trb1r", "cb_e4r"],
+                 ["cb_trb1r", "cb_e1l"],
+                 ["cb_trb1r", "cb_e2l"],
+                 ["cb_trb1r", "cb_e1r"],
+                 ["cb_trb1r", "cb_e2r"],
+                 ["cb_trb2r", "cb_e3l"],
+                 ["cb_trb2r", "cb_e4l"],
+                 ["cb_trb2r", "cb_e3r"],
+                 ["cb_trb2r", "cb_e4r"],
+                 ["cb_trb2r", "cb_e1l"],
+                 ["cb_trb2r", "cb_e2l"],
+                 ["cb_trb2r", "cb_e1r"],
+                 ["cb_trb2r", "cb_e2r"],
+                 ["cb_trb2r", "cb_trb1r", {"isExhaust":"mainEngine"}]
+                 {"deformGroup":""}
+       
+                 //intercooler
+                 {"beamSpring":2000000,"beamDamp":130},
+                 {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+                 {"deformGroup":"mainEngine_radiator_R", "deformationTriggerRatio":0.02}
+                 ["cb_ic1l", "f3ll"],
+                 ["cb_ic1l", "f4ll"],
+                 ["cb_ic1l", "q5l"],
+                 ["cb_ic1l", "q6l"],
+                 ["cb_ic1l", "q1l"],
+                 ["cb_ic1l", "q2ll"],
+       
+                 ["cb_ic1l", "f8l"],
+                 ["cb_ic1l", "rx3l"],
+       
+                 //charge pipes
+                 {"beamSpring":50000,"beamDamp":130},
+                 {"beamDeform":10000,"beamStrength":20000},
+                 {"deformGroup":"mainEngine_chargepipe_R", "deformationTriggerRatio":0.02}
+                 ["cb_ic1l", "cb_trb1r"],
+                 ["cb_ic1l", "cb_intck1l"],
+                 ["cb_ic1l", "cb_intck2l"],
+                 {"deformGroup":""}
+                 {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+           ],
+    },
+    "covetbuggy_turbo_i4_stage3": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Stage 3 Variable Boost Turbocharger",
+            "value":7700,
+        },
+        "slotType" : "covetbuggy_intake_i4",
+        "slots": [
+            ["type", "default", "description"],
+            ["covetbuggy_exhaust_trb","covetbuggy_exhaust_trbflap","Exhaust"],
+        ],
+        "variables": [
+            ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+            ["$wastegateStart", "range", "psi", "Engine", 12, 12, 35, "Wastegate Pressure", "Pressure at which the wastegate begins to open", {"stepDis":0.5}],
+        ],
+        "turbocharger": {
+            "bovSoundFileName":"event:>Vehicle>Forced_Induction>Turbo_07_cabin>turbo_bov_race",
+            "hissLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_05_cabin>turbo_hiss_race",
+            "whineLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_07_cabin>turbo_spin_race",
+            "turboSizeCoef": 0.90,
+            "bovSoundVolumeCoef": 0.45,
+            "hissVolumePerPSI": 0.030,
+            "whineVolumePer10kRPM": 0.0070,
+            "whinePitchPer10kRPM": 0.05,
+            "wastegateStart":"$wastegateStart",
+            "wastegateLimit":"$=$wastegateStart+1",
+            "maxExhaustPower": 18000,
+            "backPressureCoef": 0.00003,
+            "frictionCoef": 25,
+            "inertia":2.6,
+            "damageThresholdTemperature": 730,
+            "pressurePSI":[
+                //turbineRPM, pressure(PSI)
+                [0,         -4.5],
+                [30000,     -1.5],
+                [60000,     8],
+                [90000,     16],
+                [150000,    24],
+                [200000,    32],
+                [250000,    38],
+            ],
+            "engineDef":[
+                //engineRPM, efficiency, exhaustFactor
+                [0,     0.0,    0.0],
+                [650,   0.10,   0.08],
+                [1400,  0.12,   0.10],
+                [2000,  0.20,    0.20],
+                [2500,  0.40,    0.30],
+                [3000,  0.64,    0.55],
+                [3500,  0.84,    0.68],
+                [4000,  0.88,    0.93],
+                [5000,  0.92,    0.95],
+                [6000,  0.95,    0.96],
+                [7000,  0.96,    0.98],
+                [8000,  0.98,    1.0],
+                [9000,  0.87,    1.0],
+                [10000, 0.65,    1.0],
+                [11000, 0.55,    1.0],
+            ],
+        },
+        "mainEngine": {
+            //turbocharger name
+            "turbocharger":"turbocharger",
+            "$*instantAfterFireCoef": 2.5,
+            "$*sustainedAfterFireCoef": 2.00,
+    
+            //damage deformGroups
+            "deformGroups_turbo":["mainEngine_turbo_R","mainEngine_radiator_R"]
+        },
+        "soundConfig": {
+            "$+maxLoadMix": 0.1,
+            "$+intakeMuffling":-0.2,
+            "$+mainGain":1.5,
+            "$+eqLowGain": 1.5,
+        },
+        "soundConfigExhaust": {
+            "$+maxLoadMix": 0.1,
+            "$+minLoadMix": 0.01,
+            "$+mainGain": 0.5,
+            "$+offLoadGain": 0.00,
+            "$+eqLowGain": 0.25,
+            "$+eqFundamentalGain": 0.5,
+        },
+        "vehicleController": {
+            "clutchLaunchStartRPM":2100,
+            "clutchLaunchTargetRPM":4200,
+            //**highShiftDown can be overwritten by automatic transmissions**
+            "highShiftDownRPM":[0,0,0,2700,3350,3600,3800,3800],
+            //**highShiftUp can be overwritten by intake modifications**
+            "highShiftUpRPM":6800,
+            "revMatchThrottle":0.35,
+        },
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            ["covetbuggy_radiator_i4", ["covetbuggy_radiator_i4"]],
+            ["covetbuggy_podfilter_i4", ["covetbuggy_engine_mid","covetbuggy_intake_i4"]],
+            ["covetbuggy_header_turbo_i4", ["covetbuggy_engine_mid","covetbuggy_turbo"]],
+            ["covetbuggy_intake_i4", ["covetbuggy_engine_mid","covetbuggy_intake_i4"]],
+            {"deformGroup":"mainEngine_chargepipe_R", "deformMaterialBase":"covetbuggy_mechanical", "deformMaterialDamaged":"invis"},
+            ["covetbuggy_radiatorpipes", ["covetbuggy_radiator_i4","covetbuggy_intake_i4"]],
+            ["covetbuggy_radiatorpipes", ["covetbuggy_radiator_i4","covetbuggy_turbo"]],
+            ["covetbuggy_intakepipe_i4", ["covetbuggy_radiator_i4","covetbuggy_intake_i4"]],
+            {"deformGroup":""},
+            ],
+            "nodes": [
+                ["id", "posX", "posY", "posZ"],
+                {"selfCollision":false},
+                {"collision":false},
+                //intake
+                {"frictionCoef":0.5},
+                {"nodeMaterial":"|NM_METAL"},
+                {"nodeWeight":3.5},
+                {"group":["covetbuggy_engine_mid","covetbuggy_intake_i4"]},
+                ["cb_intck1l", -0.25000, 2.53450, 0.74896],
+                ["cb_intck2l", -0.25000, 2.05750, 0.74896],
+                {"engineGroup":""},
+       
+                //turbos
+                {"nodeWeight":2.0},
+                ["cb_trb1r", -0.18000, 1.89050, 0.55296, {"group":"covetbuggy_turbo"}],
+                ["cb_trb2r", -0.18000, 1.74050, 0.55296, {"group":"covetbuggy_turbo", "afterFireAudioCoef":1.0, "afterFireVisualCoef":1.0, "afterFireVolumeCoef":1.0, "afterFireMufflingCoef":1.0, "exhaustAudioMufflingCoef":1.0, "exhaustAudioGainChange":0}],
+       
+                //intercoolers
+                {"nodeWeight":3.0},
+                {"selfCollision":true},
+                {"collision":true},
+                ["cb_ic1l", -0.80900, 2.32850, 0.50896, {"group":"covetbuggy_radiator_i4"}],
+                {"group":""},
+           ],
+           "beams": [
+                 ["id1:", "id2:"],
+                 {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                 //intake
+                 {"deformLimitExpansion":1.2},
+                 {"beamSpring":3500940,"beamDamp":235},
+                 {"beamDeform":105000,"beamStrength":"FLT_MAX"},
+       
+                 ["cb_intck2l", "cb_intck1l"],
+                 ["cb_intck2l", "cb_e4r"],
+                 ["cb_e4r", "cb_intck1l"],
+                 ["cb_intck1l", "cb_e3r"],
+                 ["cb_intck2l", "cb_e3r"],
+                 ["cb_intck2l", "cb_e4l"],
+                 ["cb_e4l", "cb_intck1l"],
+                 ["cb_intck1l", "cb_e3l"],
+                 ["cb_e3l", "cb_intck2l"],
+                 ["cb_intck2l", "cb_e2l"],
+                 ["cb_e2l", "cb_intck1l"],
+                 ["cb_intck1l", "cb_e1l"],
+                 ["cb_e1l", "cb_intck2l"],
+                 ["cb_intck2l", "cb_e2r"],
+                 ["cb_e2r", "cb_intck1l"],
+                 ["cb_intck1l", "cb_e1r"],
+                 ["cb_e1r", "cb_intck2l"],
+       
+                 //turbo
+                 {"beamSpring":3000000,"beamDamp":130},
+                 {"beamDeform":90000,"beamStrength":"FLT_MAX"},
+                 {"deformGroup":"mainEngine_turbo_R", "deformationTriggerRatio":0.001}
+                 ["cb_trb1r", "cb_e3l"],
+                 ["cb_trb1r", "cb_e4l"],
+                 ["cb_trb1r", "cb_e3r", {"isExhaust":"mainEngine"}],
+                 ["cb_trb1r", "cb_e4r"],
+                 ["cb_trb1r", "cb_e1l"],
+                 ["cb_trb1r", "cb_e2l"],
+                 ["cb_trb1r", "cb_e1r"],
+                 ["cb_trb1r", "cb_e2r"],
+                 ["cb_trb2r", "cb_e3l"],
+                 ["cb_trb2r", "cb_e4l"],
+                 ["cb_trb2r", "cb_e3r"],
+                 ["cb_trb2r", "cb_e4r"],
+                 ["cb_trb2r", "cb_e1l"],
+                 ["cb_trb2r", "cb_e2l"],
+                 ["cb_trb2r", "cb_e1r"],
+                 ["cb_trb2r", "cb_e2r"],
+                 ["cb_trb2r", "cb_trb1r", {"isExhaust":"mainEngine"}]
+                 {"deformGroup":""}
+       
+                 //intercooler
+                 {"beamSpring":2000000,"beamDamp":130},
+                 {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+                 {"deformGroup":"mainEngine_radiator_R", "deformationTriggerRatio":0.02}
+                 ["cb_ic1l", "f3ll"],
+                 ["cb_ic1l", "f4ll"],
+                 ["cb_ic1l", "q5l"],
+                 ["cb_ic1l", "q6l"],
+                 ["cb_ic1l", "q1l"],
+                 ["cb_ic1l", "q2ll"],
+       
+                 ["cb_ic1l", "f8l"],
+                 ["cb_ic1l", "rx3l"],
+       
+                 //charge pipes
+                 {"beamSpring":50000,"beamDamp":130},
+                 {"beamDeform":10000,"beamStrength":20000},
+                 {"deformGroup":"mainEngine_chargepipe_R", "deformationTriggerRatio":0.02}
+                 ["cb_ic1l", "cb_trb1r"],
+                 ["cb_ic1l", "cb_intck1l"],
+                 ["cb_ic1l", "cb_intck2l"],
+                 {"deformGroup":""}
+                 {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+           ],
+    },
+    "covetbuggy_turbo_i4_stage4": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Stage 4 Variable Boost Turbocharger",
+            "value":9900,
+        },
+        "slotType" : "covetbuggy_intake_i4",
+        "slots": [
+            ["type", "default", "description"],
+            ["covetbuggy_exhaust_trb","covetbuggy_exhaust_trbflap","Exhaust"],
+        ],
+        "variables": [
+            ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+            ["$wastegateStart", "range", "psi", "Engine", 12, 12, 50, "Wastegate Pressure", "Pressure at which the wastegate begins to open", {"stepDis":0.5}],
+        ],
+        "turbocharger": {
+            "bovSoundFileName":"event:>Vehicle>Forced_Induction>Turbo_07_cabin>turbo_bov_race",
+            "hissLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_05_cabin>turbo_hiss_race",
+            "whineLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_07_cabin>turbo_spin_race",
+            "turboSizeCoef": 0.90,
+            "bovSoundVolumeCoef": 0.45,
+            "hissVolumePerPSI": 0.030,
+            "whineVolumePer10kRPM": 0.0070,
+            "whinePitchPer10kRPM": 0.05,
+            "wastegateStart":"$wastegateStart",
+            "wastegateLimit":"$=$wastegateStart+1",
+            "maxExhaustPower": 18000,
+            "backPressureCoef": 0.00003,
+            "frictionCoef": 25,
+            "inertia":2.6,
+            "damageThresholdTemperature": 1000,
+            "pressurePSI":[
+                //turbineRPM, pressure(PSI)
+                [0,         -4.5],
+                [30000,     -1.5],
+                [60000,     8],
+                [90000,     16],
+                [150000,    24],
+                [200000,    32],
+                [250000,    38],
+                [300000,    44]
+            ],
+            "engineDef":[
+                //engineRPM, efficiency, exhaustFactor
+                [0,     0.0,    0.0],
+                [650,   0.10,   0.08],
+                [1400,  0.12,   0.10],
+                [2000,  0.20,    0.20],
+                [2500,  0.40,    0.30],
+                [3000,  0.64,    0.55],
+                [3500,  0.84,    0.68],
+                [4000,  0.88,    0.93],
+                [5000,  0.92,    0.95],
+                [6000,  0.95,    0.96],
+                [7000,  0.96,    0.98],
+                [8000,  1.0,    1.0],
+                [9000,  1.0,    1.0],
+                [10000, 1.0,    1.0],
+                [11000, 1.0,    1.0],
+            ],
+        },
+        "mainEngine": {
+            //turbocharger name
+            "turbocharger":"turbocharger",
+            "$+idleRPMRoughness":50,
+            "$*instantAfterFireCoef": 3,
+            "$*sustainedAfterFireCoef": 3,
+    
+            //damage deformGroups
+            "deformGroups_turbo":["mainEngine_turbo_R","mainEngine_radiator_R"]
+        },
+        "soundConfig": {
+            "$+maxLoadMix": 0.2,
+            "$+minLoadMix": 0.1,
+            "$+intakeMuffling":-0.2,
+            "$+mainGain":1,
+            "$+eqLowGain": 2,
+        },
+        "soundConfigExhaust": {
+            "$+maxLoadMix": 0.2,
+            "$+minLoadMix": 0.01,
+            "$+mainGain": 1,
+            "$+offLoadGain": 0.00,
+            "$+eqLowGain": 0.25,
+            "$+eqFundamentalGain": 0.5,
+        },
+        "vehicleController": {
+            "clutchLaunchStartRPM":2100,
+            "clutchLaunchTargetRPM":4200,
+            //**highShiftDown can be overwritten by automatic transmissions**
+            "highShiftDownRPM":[0,0,0,2700,3350,3600,3800,3800],
+            //**highShiftUp can be overwritten by intake modifications**
+            "highShiftUpRPM":6800,
+            "revMatchThrottle":0.35,
+        },
+        "flexbodies": [
+            ["mesh", "[group]:", "nonFlexMaterials"],
+            ["covetbuggy_radiator_i4", ["covetbuggy_radiator_i4"]],
+            ["covetbuggy_podfilter_i4", ["covetbuggy_engine_mid","covetbuggy_intake_i4"]],
+            ["covetbuggy_header_turbo_i4", ["covetbuggy_engine_mid","covetbuggy_turbo"]],
+            ["covetbuggy_intake_i4", ["covetbuggy_engine_mid","covetbuggy_intake_i4"]],
+            {"deformGroup":"mainEngine_chargepipe_R", "deformMaterialBase":"covetbuggy_mechanical", "deformMaterialDamaged":"invis"},
+            ["covetbuggy_radiatorpipes", ["covetbuggy_radiator_i4","covetbuggy_intake_i4"]],
+            ["covetbuggy_radiatorpipes", ["covetbuggy_radiator_i4","covetbuggy_turbo"]],
+            ["covetbuggy_intakepipe_i4", ["covetbuggy_radiator_i4","covetbuggy_intake_i4"]],
+            {"deformGroup":""},
+            ],
+            "nodes": [
+                ["id", "posX", "posY", "posZ"],
+                {"selfCollision":false},
+                {"collision":false},
+                //intake
+                {"frictionCoef":0.5},
+                {"nodeMaterial":"|NM_METAL"},
+                {"nodeWeight":3.5},
+                {"group":["covetbuggy_engine_mid","covetbuggy_intake_i4"]},
+                ["cb_intck1l", -0.25000, 2.53450, 0.74896],
+                ["cb_intck2l", -0.25000, 2.05750, 0.74896],
+                {"engineGroup":""},
+       
+                //turbos
+                {"nodeWeight":2.0},
+                ["cb_trb1r", -0.18000, 1.89050, 0.55296, {"group":"covetbuggy_turbo"}],
+                ["cb_trb2r", -0.18000, 1.74050, 0.55296, {"group":"covetbuggy_turbo", "afterFireAudioCoef":1.0, "afterFireVisualCoef":1.0, "afterFireVolumeCoef":1.0, "afterFireMufflingCoef":1.0, "exhaustAudioMufflingCoef":1.0, "exhaustAudioGainChange":0}],
+       
+                //intercoolers
+                {"nodeWeight":3.0},
+                {"selfCollision":true},
+                {"collision":true},
+                ["cb_ic1l", -0.80900, 2.32850, 0.50896, {"group":"covetbuggy_radiator_i4"}],
+                {"group":""},
+           ],
+           "beams": [
+                 ["id1:", "id2:"],
+                 {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+                 //intake
+                 {"deformLimitExpansion":1.2},
+                 {"beamSpring":3500940,"beamDamp":235},
+                 {"beamDeform":105000,"beamStrength":"FLT_MAX"},
+       
+                 ["cb_intck2l", "cb_intck1l"],
+                 ["cb_intck2l", "cb_e4r"],
+                 ["cb_e4r", "cb_intck1l"],
+                 ["cb_intck1l", "cb_e3r"],
+                 ["cb_intck2l", "cb_e3r"],
+                 ["cb_intck2l", "cb_e4l"],
+                 ["cb_e4l", "cb_intck1l"],
+                 ["cb_intck1l", "cb_e3l"],
+                 ["cb_e3l", "cb_intck2l"],
+                 ["cb_intck2l", "cb_e2l"],
+                 ["cb_e2l", "cb_intck1l"],
+                 ["cb_intck1l", "cb_e1l"],
+                 ["cb_e1l", "cb_intck2l"],
+                 ["cb_intck2l", "cb_e2r"],
+                 ["cb_e2r", "cb_intck1l"],
+                 ["cb_intck1l", "cb_e1r"],
+                 ["cb_e1r", "cb_intck2l"],
+       
+                 //turbo
+                 {"beamSpring":3000000,"beamDamp":130},
+                 {"beamDeform":90000,"beamStrength":"FLT_MAX"},
+                 {"deformGroup":"mainEngine_turbo_R", "deformationTriggerRatio":0.001}
+                 ["cb_trb1r", "cb_e3l"],
+                 ["cb_trb1r", "cb_e4l"],
+                 ["cb_trb1r", "cb_e3r", {"isExhaust":"mainEngine"}],
+                 ["cb_trb1r", "cb_e4r"],
+                 ["cb_trb1r", "cb_e1l"],
+                 ["cb_trb1r", "cb_e2l"],
+                 ["cb_trb1r", "cb_e1r"],
+                 ["cb_trb1r", "cb_e2r"],
+                 ["cb_trb2r", "cb_e3l"],
+                 ["cb_trb2r", "cb_e4l"],
+                 ["cb_trb2r", "cb_e3r"],
+                 ["cb_trb2r", "cb_e4r"],
+                 ["cb_trb2r", "cb_e1l"],
+                 ["cb_trb2r", "cb_e2l"],
+                 ["cb_trb2r", "cb_e1r"],
+                 ["cb_trb2r", "cb_e2r"],
+                 ["cb_trb2r", "cb_trb1r", {"isExhaust":"mainEngine"}]
+                 {"deformGroup":""}
+       
+                 //intercooler
+                 {"beamSpring":2000000,"beamDamp":130},
+                 {"beamDeform":15000,"beamStrength":"FLT_MAX"},
+                 {"deformGroup":"mainEngine_radiator_R", "deformationTriggerRatio":0.02}
+                 ["cb_ic1l", "f3ll"],
+                 ["cb_ic1l", "f4ll"],
+                 ["cb_ic1l", "q5l"],
+                 ["cb_ic1l", "q6l"],
+                 ["cb_ic1l", "q1l"],
+                 ["cb_ic1l", "q2ll"],
+       
+                 ["cb_ic1l", "f8l"],
+                 ["cb_ic1l", "rx3l"],
+       
+                 //charge pipes
+                 {"beamSpring":50000,"beamDamp":130},
+                 {"beamDeform":10000,"beamStrength":20000},
+                 {"deformGroup":"mainEngine_chargepipe_R", "deformationTriggerRatio":0.02}
+                 ["cb_ic1l", "cb_trb1r"],
+                 ["cb_ic1l", "cb_intck1l"],
+                 ["cb_ic1l", "cb_intck2l"],
+                 {"deformGroup":""}
+                 {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+           ],
+    },
+    "covetbuggy_engine_ecu": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Stock ECU",
+            "value":625,
+        },
+        "slotType" : "covetbuggy_engine_ecu",
+        "mainEngine":{
+            "revLimiterRPM":6300,
+            "revLimiterType":"timeBased",
+            "revLimiterCutTime":0.18,
+        },
+    },
+    "covetbuggy_engine_ecu_sport": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Sport ECU",
+            "value":900,
+        },
+        "slotType" : "covetbuggy_engine_ecu",
+        "mainEngine":{
+            "$+idleRPM":100,
+            "revLimiterRPM":6800,
+            "revLimiterType":"timeBased",
+            "revLimiterCutTime":0.13,
+            "revLimiterMaxRPMDrop":200,
+            "$*instantAfterFireCoef": 1.25,
+            "$*sustainedAfterFireCoef": 1.25,
+        },
+        "vehicleController": {
+            "highShiftUpRPM":6600,
+        },
+    },
+    "covetbuggy_engine_ecu_zxi": {
+        "information":{
+            "authors":"niTniT",
+            "name":"ZXi ECU",
+            "value":1050,
+        },
+        "slotType" : "covetbuggy_engine_ecu",
+        "mainEngine":{
+            "hasRevLimiter":true,
+            "$+idleRPM":100,
+            "revLimiterRPM":7400,
+            "revLimiterType":"timeBased",
+            "revLimiterCutTime":0.10,
+            "revLimiterMaxRPMDrop":200,
+            "$*instantAfterFireCoef": 1.25,
+            "$*sustainedAfterFireCoef": 1.25,
+        },
+    },
+    "covetbuggy_engine_ecu_evolution": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Evolution ECU",
+            "value":1050,
+        },
+        "slotType" : "covetbuggy_engine_ecu",
+        "mainEngine":{
+            "hasRevLimiter":true,
+            "$+idleRPM":200,
+            "revLimiterRPM":7500,
+            "revLimiterType":"timeBased",
+            "revLimiterCutTime":0.08,
+            "revLimiterMaxRPMDrop":150,
+            "$*instantAfterFireCoef": 1.35,
+            "$*sustainedAfterFireCoef": 1.35,
+        },
+    },
+    "covetbuggy_engine_ecu_race": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Adjustable Race ECU",
+            "value":3600,
+        },
+        "slotType" : "covetbuggy_engine_ecu",
+        "variables": [
+            ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+            ["$revLimiterRPM", "range", "rpm", "Engine", 6500, 4000, 11000, "RPM Limit", "RPM where the rev limiter prevents further revving", {"stepDis":50}],
+            ["$revLimiterCutTime", "range", "s", "Engine", 0.10, 0.01, 0.5, "RPM Limit Cut Time", "How fast the rev limiter cycles", {"stepDis":0.01}],
+        ],
+        "controller": [
+            ["fileName"],
+            ["twoStepLaunch", {"rpmLimit":4000}],
+        ],
+        "mainEngine":{
+            "$+idleRPM":700,
+            "revLimiterRPM":"$revLimiterRPM",
+            "revLimiterType":"timeBased",
+            "revLimiterCutTime":"$revLimiterCutTime",
+            "revLimiterMaxRPMDrop":250,
+            "$*instantAfterFireCoef": 1.5,
+            "$*sustainedAfterFireCoef": 1.5,
+        },
+        "vehicleController": {
+            "highShiftUpRPM":"$=$revLimiterRPM - 200",
+        },
+    },
+    "covetbuggy_engine_internals": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Stock Long Block",
+            "value":200,
+        },
+        "slotType" : "covetbuggy_engine_internals",
+        "mainEngine":{
+        },
+    },
+    "covetbuggy_engine_internals_heavy": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Heavy Duty Long Block",
+            "value":1200,
+        },
+        "slotType" : "covetbuggy_engine_internals",
+        "mainEngine":{
+            "torqueModMult":[
+                ["rpm", "torque"],
+                [0,    1],
+                [1000, 1],
+                [2500, 0.95],
+                [3500, 0.95],
+                [4000, 0.94],
+                [5000, 0.94],
+                [6000, 0.93],
+                [7000, 0.93],
+                [8000, 0.92],
+                [8500, 0.89],
+                [9000, 0.87],
+            ],
+            //max rpm physically capable of
+            "$+maxRPM":300,
+            "$*friction":1.1,
+            "$*dynamicFriction":1.1,
+            "$*inertia":1.2,
+            "$*engineBrakeTorque":1.15,
+            //engine durability
+            "cylinderWallTemperatureDamageThreshold":175,
+            "headGasketDamageThreshold":1700000,
+            "pistonRingDamageThreshold":1700000,
+            "connectingRodDamageThreshold":2200000,
+            //"maxTorqueRating": 390,
+            //"maxOverTorqueDamage": 450,
+            "$*maxTorqueRating": 1.6,
+            "$*maxOverTorqueDamage": 1.25,
+        },
+    },
+    "covetbuggy_engine_internals_ultra": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Ultra Heavy Duty Long Block",
+            "value":3100,
+        },
+        "slotType" : "covetbuggy_engine_internals",
+        "mainEngine":{
+            "torqueModMult":[
+                ["rpm", "torque"],
+                [0,       1],
+                [1000, 0.85],
+                [2500, 0.87],
+                [4000, 0.91],
+                [5000, 0.98],
+                [6000, 1.10],
+                [6500, 1.16],
+                [7000, 1.28],
+                [8000, 1.52],
+                [8500, 1.62],
+                [9000, 1.85],
+            ],
+            //max rpm physically capable of
+            //max rpm physically capable of
+            "$+maxRPM":1250,
+            "$*friction":1.2,
+            "$*dynamicFriction":1.15,
+            "$*inertia":1.25,
+            "$*engineBrakeTorque":1.25,
+            //engine durability
+            "cylinderWallTemperatureDamageThreshold":175,
+            "headGasketDamageThreshold":1700000,
+            "pistonRingDamageThreshold":1700000,
+            "connectingRodDamageThreshold":2200000,
+            //"maxTorqueRating": 605,
+            //"maxOverTorqueDamage": 450,
+            "$*maxTorqueRating": 4.2,
+            "$*maxOverTorqueDamage": 3.1,
+        },
+    },
+    "covetbuggy_engine_internals_stage1": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Stage 1 Performance Long Block",
+            "value":2400,
+        },
+        "slotType" : "covetbuggy_engine_internals",
+        "mainEngine":{
+            "torqueModMult":[
+                ["rpm", "torque"],
+                [0,       1],
+                [1000, 0.83],
+                [2000, 0.86],
+                [3000, 0.89],
+                [4000, 0.94],
+                [5000, 1.01],
+                [6000, 1.05],
+                [6500, 1.07],
+                [7000, 1.08],
+                [8000, 1.18],
+                [9000, 1.4],
+            ],
+            //max rpm physically capable of
+            "$+maxRPM":1000,
+            "$*friction":0.87,
+            "$*dynamicFriction":1,
+            "$*inertia":0.9,
+            "$*engineBrakeTorque":1.3,
+            //engine durability
+            "cylinderWallTemperatureDamageThreshold":160,
+            "$*maxTorqueRating": 1.24,
+            "$*maxOverTorqueDamage": 1.5,
+        },
+    },
+    "covetbuggy_engine_internals_stage2": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Stage 2 Performance Long Block",
+            "value":3600,
+        },
+        "slotType" : "covetbuggy_engine_internals",
+        "mainEngine":{
+            "torqueModMult":[
+                ["rpm", "torque"],
+                [0,       1],
+                [1000, 0.81],
+                [2000, 0.84],
+                [3000, 0.92],
+                [4000, 0.95],
+                [5000, 1.04],
+                [6000, 1.12],
+                [6500, 1.18],
+                [7000, 1.24],
+                [8000, 1.5],
+                [9000, 2.2],
+            ],
+            //max rpm physically capable of
+            "$+maxRPM":2000,
+            "$*friction":0.9,
+            "$*dynamicFriction":1.05,
+            "$*inertia":0.95,
+            "$*engineBrakeTorque":1.35,
+            //engine durability
+            "cylinderWallTemperatureDamageThreshold":170,
+            //"maxTorqueRating": 700,
+            //"maxOverTorqueDamage": 250,
+            "$*maxTorqueRating": 1.36,
+            "$*maxOverTorqueDamage": 1.5,
+        },
+    },
+    "covetbuggy_engine_internals_stage3": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Stage 3 Performance Long Block",
+            "value":3600,
+        },
+        "slotType" : "covetbuggy_engine_internals",
+        "mainEngine":{
+            "torqueModMult":[
+                ["rpm", "torque"],
+                [0,       1],
+                [1000, 0.81],
+                [2000, 0.84],
+                [3000, 0.92],
+                [4000, 1.02],
+                [5000, 1.17],
+                [6000, 1.29],
+                [6500, 1.36],
+                [7000, 1.45],
+                [8000, 1.8],
+                [9000, 2.7],
+            ],
+            //max rpm physically capable of
+            "$+maxRPM":2000,
+            "$*friction":0.9,
+            "$*dynamicFriction":1.05,
+            "$*inertia":0.95,
+            "$*engineBrakeTorque":1.35,
+            //engine durability
+            "cylinderWallTemperatureDamageThreshold":170,
+            //"maxTorqueRating": 700,
+            //"maxOverTorqueDamage": 250,
+            "$*maxTorqueRating": 1.66,
+            "$*maxOverTorqueDamage": 1.5,
+        },
+    },
+    "covetbuggy_engine_internals_stage4": {
+        "information":{
+            "authors":"niTniT",
+            "name":"Stage 4 Reinforced Performance Long Block",
+            "value":3600,
+        },
+        "slotType" : "covetbuggy_engine_internals",
+        "mainEngine":{
+            "torqueModMult":[
+                ["rpm", "torque"],
+                [0,       1],
+                [1000, 0.81],
+                [2000, 0.84],
+                [3000, 0.92],
+                [4000, 1.02],
+                [5000, 1.17],
+                [6000, 1.29],
+                [6500, 1.36],
+                [7000, 1.45],
+                [8000, 1.8],
+                [9000, 2.7],
+                [10000, 3.5],
+                [11000, 4.2],
+            ],
+            //max rpm physically capable of
+            "$+maxRPM":4000,
+            "$*friction":0.9,
+            "$*dynamicFriction":1.05,
+            "$*inertia":0.95,
+            "$*engineBrakeTorque":1.35,
+            //engine durability
+            "cylinderWallTemperatureDamageThreshold":170,
+            //"maxTorqueRating": 700,
+            //"maxOverTorqueDamage": 250,
+            "$*maxTorqueRating": 50,
+            "$*maxOverTorqueDamage": 1.5,
+        },
+    },
+    }
+    
